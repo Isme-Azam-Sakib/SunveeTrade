@@ -48,7 +48,7 @@ next-env.d.ts
 # `public/media` is the local staging area: drop new photography here, preview
 # it with `npm run dev`, then publish it with `npm run media:upload`.
 # ---------------------------------------------------------------------------
-/public/media/
+# /public/media/
 
 # next-sitemap output
 /public/sitemap*.xml
