@@ -9,7 +9,40 @@ import type { NextConfig } from "next";
  */
 function remotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
   const origin = process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN;
-  if (!origin) return [];
+  const patterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [
+    {
+      protocol: "https",
+      hostname: "www.shine-art.com",
+      pathname: "/**",
+    },
+    {
+      protocol: "https",
+      hostname: "shine-art.com",
+      pathname: "/**",
+    },
+    {
+      protocol: "http",
+      hostname: "www.shine-art.com",
+      pathname: "/**",
+    },
+    {
+      protocol: "http",
+      hostname: "shine-art.com",
+      pathname: "/**",
+    },
+    {
+      protocol: "https",
+      hostname: "52.79.93.16",
+      pathname: "/**",
+    },
+    {
+      protocol: "http",
+      hostname: "52.79.93.16",
+      pathname: "/**",
+    },
+  ];
+
+  if (!origin) return patterns;
 
   let url: URL;
   try {
@@ -21,13 +54,13 @@ function remotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
   }
 
   const base = url.pathname.replace(/\/+$/, "");
-  return [
-    {
-      protocol: url.protocol.replace(":", "") as "http" | "https",
-      hostname: url.hostname,
-      pathname: `${base}/**`,
-    },
-  ];
+  patterns.push({
+    protocol: url.protocol.replace(":", "") as "http" | "https",
+    hostname: url.hostname,
+    pathname: `${base}/**`,
+  });
+
+  return patterns;
 }
 
 const nextConfig: NextConfig = {

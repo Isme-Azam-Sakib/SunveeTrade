@@ -94,6 +94,18 @@ export default async function ProductLinePage(
                   <li className={styles.item} key={item.slug}>
                     <b>{item.name}</b>
                     {item.description ? <p>{item.description}</p> : null}
+                    {item.images?.length ? (
+                      <div className={styles.itemGallery}>
+                        {item.images.map((img, idx) => (
+                          <Media
+                            key={idx}
+                            media={img}
+                            className={styles.itemThumb}
+                            sizes="(max-width: 768px) 80px, 100px"
+                          />
+                        ))}
+                      </div>
+                    ) : null}
                     {item.specs?.length ? (
                       <ul className={styles.specs}>
                         {item.specs.map((spec) => (

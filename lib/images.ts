@@ -21,6 +21,7 @@ function normaliseOrigin(value: string | undefined): string | null {
 }
 
 export function mediaUrl(key: string): string {
+  if (/^https?:\/\//i.test(key)) return key;
   const clean = key.replace(/^\/+/, "");
   return origin ? `${origin}/${clean}` : `/media/${clean}`;
 }

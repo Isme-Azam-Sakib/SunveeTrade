@@ -112,6 +112,28 @@
   color: var(--graphite);
 }
 
+.itemGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.itemThumb {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  border: 1px solid var(--hair-strong);
+  position: relative;
+  background: var(--sunken);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.itemThumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 /* Product-line index grid. */
 .grid {
   display: grid;
