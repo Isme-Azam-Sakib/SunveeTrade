@@ -1,0 +1,156 @@
+.strength {
+  background: var(--sunken);
+}
+.split {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+  align-items: start;
+}
+.left {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.nav {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.nav button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 0;
+  font-size: 15px;
+  color: var(--muted);
+  transition-property: color;
+  transition-duration: 200ms;
+}
+/* The dash grows into a solid rule for the card currently in view. */
+.nav button::before {
+  content: "";
+  width: 28px;
+  height: 0;
+  border-top: 1.5px dashed currentColor;
+  transform-origin: left;
+  scale: 0.45 1;
+  transition-property: scale;
+  transition-duration: 400ms;
+  transition-timing-function: var(--out);
+}
+.nav button[aria-current="true"] {
+  color: var(--ink);
+}
+.nav button[aria-current="true"]::before {
+  scale: 1 1;
+  border-top-style: solid;
+  border-color: var(--a600);
+}
+.nav button:focus-visible {
+  outline: 2px solid var(--a600);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+.also span {
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--hair);
+  color: var(--graphite);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-bottom: 40px;
+}
+/* Cards pin in a staircase; each one shrinks slightly as the next covers it. */
+.card {
+  position: sticky;
+  top: calc(118px + var(--i) * 20px);
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 26px;
+  min-height: 216px;
+  box-shadow:
+    0 1px 2px rgba(20, 22, 26, 0.05),
+    0 18px 40px -22px rgba(20, 22, 26, 0.28);
+  transform-origin: 50% 0;
+  scale: var(--sc, 1);
+  transition-property: scale;
+  transition-duration: 300ms;
+  transition-timing-function: var(--ease);
+}
+.card :global(.ph) {
+  border-radius: var(--r-sm);
+}
+.txt {
+  padding: 22px 22px 22px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.txt small {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--a600);
+  text-transform: uppercase;
+}
+.txt h3 {
+  margin: 10px 0 8px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.txt p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    position: static;
+  }
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    position: relative;
+    top: auto;
+  }
+  .card :global(.ph) {
+    height: 180px;
+  }
+  .txt {
+    padding: 4px 16px 18px;
+  }
+}

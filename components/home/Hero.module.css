@@ -1,0 +1,190 @@
+.hero {
+  position: relative;
+  padding: 64px 0 104px;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -200px 0 auto 0;
+  height: 900px;
+  background: radial-gradient(
+    55% 50% at 80% 40%,
+    rgba(217, 84, 30, 0.1),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+.h1 {
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5.6vw, 5.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.h1 .ln {
+  display: block;
+}
+.h1 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--a600);
+}
+
+/* A trim photo set inline in the headline, shaped like a length of tape. */
+.inlineImg {
+  display: inline-block;
+  width: 1.7em;
+  height: 0.74em;
+  border-radius: 999px;
+  vertical-align: 0.03em;
+  margin: 0 0.12em;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.1);
+}
+.inlineImg img {
+  object-fit: cover;
+  transition-property: scale;
+  transition-duration: 700ms;
+  transition-timing-function: var(--out);
+}
+.h1:hover .inlineImg img {
+  scale: 1.25;
+}
+
+.low {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  margin-top: 48px;
+  align-items: end;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 28px;
+}
+
+.stage {
+  position: relative;
+  height: clamp(380px, 36vw, 500px);
+}
+.media {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-xl);
+  animation: unveil 1.3s var(--out) both 0.35s;
+}
+.mediaImg {
+  scale: 1.08;
+  transform-origin: 60% 50%;
+}
+
+@keyframes unveil {
+  from {
+    clip-path: inset(22% 0 0 0 round 42px);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 42px);
+    opacity: 1;
+  }
+}
+
+.float {
+  position: absolute;
+  left: -58px;
+  bottom: -42px;
+  width: 132px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow:
+    0 0 0 6px var(--paper),
+    0 20px 40px -18px rgba(20, 22, 26, 0.4);
+}
+
+/* Swing tag hanging from a dashed thread, swaying with the pointer. */
+.tag {
+  position: absolute;
+  right: 28px;
+  top: -34px;
+  z-index: 3;
+  width: 250px;
+  background: #fff;
+  border-radius: var(--r-sm);
+  padding: 18px 20px;
+  box-shadow:
+    0 1px 2px rgba(20, 22, 26, 0.06),
+    0 24px 48px -20px rgba(20, 22, 26, 0.3);
+  transform-origin: 50% 0;
+  rotate: var(--tilt, -3deg);
+  translate: var(--tx, 0) var(--ty, 0);
+  will-change: transform;
+}
+.tag::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  height: 46px;
+  width: 0;
+  border-left: 1.5px dashed var(--muted);
+}
+.tagTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.tagTop i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--hair-strong);
+}
+.tag h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  letter-spacing: -0.01em;
+}
+.tag p {
+  margin: 0;
+  font: 400 12.5px/1.6 var(--mono);
+  color: var(--graphite);
+}
+.tag p b {
+  color: var(--a600);
+  font-weight: 500;
+}
+
+@media (max-width: 1080px) {
+  .low {
+    grid-template-columns: 1fr;
+  }
+  .stage {
+    margin-top: 40px;
+  }
+  .float {
+    left: auto;
+    right: 24px;
+    bottom: -40px;
+    width: 104px;
+  }
+}
+
+@media (max-width: 720px) {
+  .tag {
+    width: 220px;
+    right: 12px;
+  }
+}

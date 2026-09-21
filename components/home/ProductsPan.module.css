@@ -1,0 +1,233 @@
+/* Vertical scroll is translated into a horizontal pan across the product
+   cards. The wrapper's height is set in JS to match the track's overflow. */
+.wrap {
+  position: relative;
+  background: var(--ink);
+  color: #fff;
+}
+.stick {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 max(var(--gut), calc((100vw - var(--max)) / 2));
+  width: max-content;
+  will-change: transform;
+}
+
+.intro {
+  width: min(420px, 78vw);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-right: 40px;
+}
+.intro :global(.h2) {
+  color: #fff;
+}
+.intro :global(.lede) {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.card {
+  flex: none;
+  width: clamp(290px, 30vw, 430px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.card:nth-of-type(odd) {
+  translate: 0 5vh;
+}
+.card:nth-of-type(even) {
+  translate: 0 -5vh;
+}
+.card :global(.ph) {
+  height: min(56vh, 540px);
+  border-radius: var(--r-md);
+  background: #23262c;
+}
+/* The photo is oversized and drifts against the pan, so cards parallax past
+   one another rather than sliding as flat tiles. */
+.cardImg {
+  scale: var(--pscale, 1.24);
+  translate: var(--px, 0) 0;
+  transition-property: scale;
+  transition-duration: 900ms;
+  transition-timing-function: var(--out);
+}
+.card:hover .cardImg {
+  --pscale: 1.3;
+}
+
+.go {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  scale: 0.6;
+  opacity: 0;
+  filter: blur(4px);
+  transition-property: opacity, scale, filter;
+  transition-duration: 300ms;
+  transition-timing-function: var(--ease);
+}
+.card:hover .go,
+.card:focus-visible .go {
+  scale: 1;
+  opacity: 1;
+  filter: blur(0);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.card p {
+  margin: 6px 0 0;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.55;
+  max-width: 40ch;
+}
+.card :global(.fig) {
+  color: var(--a300);
+  display: block;
+  margin-top: 10px;
+}
+
+.end {
+  flex: none;
+  width: min(360px, 78vw);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 24px;
+}
+.end h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.endLede {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* Tape measure running under the track, marking pan progress. */
+.tape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  height: 46px;
+}
+.tapeStrip {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 400%;
+  background:
+    repeating-linear-gradient(
+        90deg,
+        rgba(20, 22, 26, 0.9) 0 1px,
+        transparent 1px 10px
+      )
+      0 0 / 100% 10px no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        rgba(20, 22, 26, 0.9) 0 1.5px,
+        transparent 1.5px 50px
+      )
+      0 0 / 100% 17px no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        rgba(20, 22, 26, 1) 0 2px,
+        transparent 2px 100px
+      )
+      0 0 / 100% 24px no-repeat,
+    #e9c46a;
+  will-change: transform;
+}
+.tapeStrip span {
+  position: absolute;
+  top: 26px;
+  font: 500 11px/1 var(--mono);
+  color: var(--ink);
+  translate: -50% 0;
+}
+.needle {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  bottom: -6px;
+  width: 2px;
+  background: var(--a500);
+  box-shadow: 0 0 0 3px rgba(217, 84, 30, 0.18);
+}
+.label {
+  position: absolute;
+  left: 50%;
+  bottom: 58px;
+  translate: -50% 0;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .card {
+    width: 78vw;
+  }
+  .card:nth-of-type(odd),
+  .card:nth-of-type(even) {
+    translate: 0 0;
+  }
+  .card :global(.ph) {
+    height: 48vh;
+  }
+}
+
+/* Reduced motion: fall back to a native horizontal scroller with snap. */
+:global(.rm) .wrap {
+  height: auto !important;
+}
+:global(.rm) .stick {
+  position: relative;
+  height: auto;
+  padding: 120px 0;
+}
+:global(.rm) .track {
+  width: auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 24px;
+  transform: none !important;
+}
+:global(.rm) .track > * {
+  scroll-snap-align: start;
+}
+:global(.rm) .tape {
+  display: none;
+}

@@ -1,0 +1,66 @@
+.marquee {
+  background: var(--ink);
+  color: #fff;
+  padding: 34px 0 38px;
+  overflow: hidden;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.head p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Skewed and stretched in proportion to scroll velocity, then springs back —
+   the band behaves like the elastic it is advertising. */
+.stretch {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 50s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+.track span {
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.42);
+  padding: 0 38px;
+  white-space: nowrap;
+  transition-property: color;
+  transition-duration: 150ms;
+}
+.track span:nth-child(3n) {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.track span:hover {
+  color: #fff;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 720px) {
+  .head :global(.link) {
+    display: none;
+  }
+}

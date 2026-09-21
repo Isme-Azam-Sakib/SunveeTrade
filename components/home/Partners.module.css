@@ -1,0 +1,73 @@
+/* A hairline grid of brand names. Each cell tracks its letters apart on hover,
+   which reads like a woven label being pulled taut. */
+.wall {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--hair);
+  background: var(--hair);
+  gap: 1px;
+}
+.wall > * {
+  background: var(--surface);
+  height: 124px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 12px;
+}
+.wall span {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #8d8983;
+  transition-property: color, letter-spacing;
+  transition-duration: 500ms;
+  transition-timing-function: var(--spring);
+}
+.wall div:hover span {
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+.wall div:nth-child(4n + 2) span {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  letter-spacing: 0;
+}
+.wall div:nth-child(4n + 2):hover span {
+  letter-spacing: 0.08em;
+}
+.wall div:nth-child(5n + 3) span {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+}
+.wall div:nth-child(5n + 3):hover span {
+  letter-spacing: 0.2em;
+}
+
+.you {
+  background: var(--a600);
+  color: #fff;
+  font: 500 14px/1.35 var(--sans);
+  transition-property: background-color;
+  transition-duration: 150ms;
+}
+.you:hover {
+  background: var(--a700);
+}
+
+@media (max-width: 1080px) {
+  .wall {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

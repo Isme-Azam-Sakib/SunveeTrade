@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ---------------------------------------------------------------------------
+# Product photography (technical spec §4)
+#
+# Images live in Cloudflare R2, NOT in git — repo size, clone/CI time and
+# Vercel deploy limits all degrade with a large, growing photo catalog.
+# `public/media` is the local staging area: drop new photography here, preview
+# it with `npm run dev`, then publish it with `npm run media:upload`.
+# ---------------------------------------------------------------------------
+/public/media/
+
+# next-sitemap output
+/public/sitemap*.xml
+/public/robots.txt
+
+# env files, but keep the documented template
+!.env.example

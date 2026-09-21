@@ -1,0 +1,112 @@
+/* A tall scroll track with a pinned viewport inside it. Scrolling scales the
+   cut-out letters up through the full stop until the photo behind fills the
+   screen. */
+.wrap {
+  height: 280vh;
+  position: relative;
+  background: var(--ink);
+}
+.stick {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+}
+.bg img {
+  object-fit: cover;
+  scale: var(--bs, 1.25);
+}
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    70% 70% at 50% 50%,
+    rgba(20, 22, 26, 0.1),
+    rgba(20, 22, 26, 0.65)
+  );
+  opacity: var(--scrim, 0);
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.svg text {
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12vh;
+  text-align: center;
+  color: var(--graphite);
+  font-size: 17px;
+  opacity: var(--co, 1);
+  translate: 0 var(--cy, 0);
+}
+
+.final {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 var(--gut);
+  opacity: var(--fo, 0);
+  translate: 0 var(--fy, 30px);
+  pointer-events: none;
+}
+.final h2 {
+  font-weight: 300;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.final h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--a300);
+}
+.final p {
+  margin: 22px auto 0;
+  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+}
+
+/* Reduced motion: drop the scroll track and show the resolved state. */
+:global(.rm) .wrap {
+  height: auto;
+}
+:global(.rm) .stick {
+  position: relative;
+  height: 80vh;
+}
+:global(.rm) .svg,
+:global(.rm) .cap {
+  display: none;
+}
+:global(.rm) .final {
+  --fo: 1;
+  --fy: 0;
+}
+:global(.rm) .bg {
+  --scrim: 1;
+}

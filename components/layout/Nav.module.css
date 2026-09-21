@@ -1,0 +1,159 @@
+.utility {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.72);
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.06em;
+}
+.utility :global(.wrap) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  gap: 24px;
+}
+.utility a:hover {
+  color: #fff;
+}
+.contact {
+  display: flex;
+  gap: 28px;
+}
+
+.shell {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  padding: 14px var(--gut) 0;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px));
+  transition-property: translate;
+  transition-duration: 400ms;
+  transition-timing-function: var(--out);
+}
+.shell[data-hidden="true"] {
+  translate: 0 -120%;
+}
+
+.nav {
+  position: relative;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 64px;
+  padding: 0 8px 0 18px;
+  border-radius: 999px;
+  background: rgba(250, 248, 244, 0.8);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow:
+    0 0 0 1px rgba(20, 22, 26, 0.07),
+    0 10px 30px -14px rgba(20, 22, 26, 0.2);
+}
+
+/* Page-progress thread stitched along the bottom of the pill. */
+.thread {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: -1px;
+  height: 0;
+  border-top: 1.5px dashed var(--a500);
+  transform-origin: left;
+  scale: var(--p, 0) 1;
+  opacity: 0.9;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.links a {
+  display: block;
+  white-space: nowrap;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--graphite);
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+}
+.links a:hover {
+  color: var(--ink);
+  background: rgba(20, 22, 26, 0.05);
+}
+
+.menuBtn {
+  display: none;
+}
+
+/* Mobile drawer. Only rendered below the nav breakpoint. */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: var(--paper);
+  padding: calc(24px + env(safe-area-inset-top, 0px)) var(--gut) 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+.drawerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.drawer ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.drawer ul a {
+  display: block;
+  padding: 16px 0;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--hair);
+}
+.drawerFoot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font: 500 12px/1.6 var(--mono);
+  color: var(--graphite);
+}
+
+@media (max-width: 1280px) {
+  .links a {
+    padding: 10px 9px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .links,
+  .nav .quoteBtn {
+    display: none;
+  }
+  .menuBtn {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .utility .left {
+    display: none;
+  }
+  .utility :global(.wrap) {
+    justify-content: center;
+  }
+}
