@@ -13,10 +13,10 @@ import { clamp, prefersReducedMotion } from "@/lib/scroll-frame";
 import styles from "./Hero.module.css";
 
 const HERO_IMAGE = {
-  key: "home/hero-elastic-rolls.jpg",
-  alt: "Rolls of woven and jacquard elastic in brand colours",
+  key: "home/crochet-elastic-rolls.jpg",
+  alt: "Rolls of crochet elastic in assorted colours",
 };
-const DETAIL_IMAGE = { key: "home/hero-detail.jpg", alt: "" };
+const DETAIL_IMAGE = { key: "home/drawcord-detail.jpg", alt: "" };
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -129,7 +129,7 @@ export function Hero() {
           >
             <span className={styles.inlineImg} aria-hidden="true">
               <Image
-                src={mediaUrl("home/hero-inline-trim.jpg")}
+                src={mediaUrl("home/lingerie-strap-trim.jpg")}
                 alt=""
                 fill
                 sizes="140px"

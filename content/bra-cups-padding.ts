@@ -8,8 +8,8 @@ export const braCupsPadding: ProductLine = {
   intro:
     "Foam is laminated, moulded and cut against your grading. Cup shape is signed off on a fit sample before the moulds are committed, so bulk matches the approved silhouette.",
   cover: {
-    key: "product-lines/bra-cups-padding/cover.jpg",
-    alt: "Moulded foam bra cups",
+    key: "product-lines/bra-cups-padding/moulded-cups/round-cup/1.png",
+    alt: "Round moulded foam cups, black and white",
   },
   headlineFigure: "7,80,640 pairs per month, shoulder pads",
   materials: ["High-density foam", "Laminated tricot", "Spacer fabric"],

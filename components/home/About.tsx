@@ -12,8 +12,8 @@ import { useBuild, useScrollFrame } from "@/lib/use-scroll-frame";
 import styles from "./About.module.css";
 
 const ABOUT_IMAGE = {
-  key: "home/about-yarn-cones.jpg",
-  alt: "Yarn cones ready for the covering and warping machines",
+  key: "home/factory-floor-wide.jpg",
+  alt: "Narrow fabric weaving machines running on the factory floor",
 };
 
 /**

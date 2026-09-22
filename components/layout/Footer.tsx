@@ -66,7 +66,7 @@ export function Footer() {
       <div className={styles.cta}>
         <div className={styles.bg} ref={bgRef}>
           <Image
-            src={mediaUrl("home/cta-backdrop.jpg")}
+            src={mediaUrl("home/floral-applique-cta.jpg")}
             alt=""
             aria-hidden="true"
             fill

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageShell } from "@/components/layout/PageShell";
+import { CoverParallax } from "@/components/products/CoverParallax";
+import { LineGallery } from "@/components/products/LineGallery";
 import { Media } from "@/components/ui/Media";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { StitchLink } from "@/components/ui/StitchLink";
@@ -47,6 +49,11 @@ export default async function ProductLinePage(
   const line = getProductLine(slug);
   if (!line) notFound();
 
+  const productCount = line.categories.reduce(
+    (total, category) => total + category.items.length,
+    0,
+  );
+
   return (
     <PageShell>
       <section className={`wrap ${styles.head}`}>
@@ -56,6 +63,23 @@ export default async function ProductLinePage(
         </p>
         <h1 className={styles.title}>{line.name}</h1>
         <p className="lede">{line.intro}</p>
+
+        <dl className={styles.facts}>
+          <div>
+            <dt>Products</dt>
+            <dd>{String(productCount).padStart(2, "0")}</dd>
+          </div>
+          <div>
+            <dt>Categories</dt>
+            <dd>{String(line.categories.length).padStart(2, "0")}</dd>
+          </div>
+          {line.headlineFigure ? (
+            <div>
+              <dt>Capacity</dt>
+              <dd>{line.headlineFigure}</dd>
+            </div>
+          ) : null}
+        </dl>
 
         {line.materials?.length ? (
           <div className={styles.materials}>
@@ -67,62 +91,26 @@ export default async function ProductLinePage(
       </section>
 
       <div className="wrap">
-        <Media
-          as="figure"
-          media={line.cover}
-          className={styles.cover}
-          sizes="(max-width: 1220px) 100vw, 1180px"
-          priority
-        />
+        <CoverParallax className={styles.cover}>
+          <Media
+            as="figure"
+            media={line.cover}
+            className={styles.coverFrame}
+            imgClassName={styles.coverImg}
+            sizes="(max-width: 1220px) 100vw, 1180px"
+            priority
+          />
+        </CoverParallax>
       </div>
 
       <section
         className="wrap"
         style={{ paddingBottom: "clamp(96px,11vw,150px)" }}
-        aria-label={`${line.name} categories`}
+        aria-label={`${line.name} catalogue`}
       >
-        <div className={styles.categories}>
-          {line.categories.map((category) => (
-            <article className={styles.category} key={category.slug}>
-              <div>
-                <h3>{category.name}</h3>
-                <p>{category.summary}</p>
-              </div>
+        <LineGallery categories={line.categories} lineName={line.name} />
 
-              <ul className={styles.items}>
-                {category.items.map((item) => (
-                  <li className={styles.item} key={item.slug}>
-                    <b>{item.name}</b>
-                    {item.description ? <p>{item.description}</p> : null}
-                    {item.images?.length ? (
-                      <div className={styles.itemGallery}>
-                        {item.images.map((img, idx) => (
-                          <Media
-                            key={idx}
-                            media={img}
-                            className={styles.itemThumb}
-                            sizes="(max-width: 768px) 80px, 100px"
-                          />
-                        ))}
-                      </div>
-                    ) : null}
-                    {item.specs?.length ? (
-                      <ul className={styles.specs}>
-                        {item.specs.map((spec) => (
-                          <li key={spec.label}>
-                            <b>{spec.label}:</b> {spec.value}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-
-        <p style={{ marginTop: 40 }}>
+        <p className={styles.close}>
           <StitchLink href="/#contact">
             Request a quote for {line.name.toLowerCase()}
           </StitchLink>

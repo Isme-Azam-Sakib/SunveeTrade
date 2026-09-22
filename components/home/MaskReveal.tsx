@@ -119,7 +119,7 @@ export function MaskReveal() {
       <div className={styles.stick}>
         <div className={styles.bg} ref={bgRef}>
           <Image
-            src={mediaUrl("home/spec-backdrop.jpg")}
+            src={mediaUrl("home/tape-texture-backdrop.jpg")}
             alt=""
             aria-hidden="true"
             fill

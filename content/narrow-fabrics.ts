@@ -8,8 +8,8 @@ export const narrowFabrics: ProductLine = {
   intro:
     "Our largest business unit. Crochet, jacquard and needle-loom machines run waistbands, tapes and drawcords to your width, elongation and colour spec, with recycled and organic yarn options across every construction.",
   cover: {
-    key: "product-lines/narrow-fabrics/cover.jpg",
-    alt: "Jacquard and printed woven elastic bands",
+    key: "product-lines/narrow-fabrics/crochet-elastic/crochet-plain/1.png",
+    alt: "Plain crochet elastic in assorted colours",
   },
   headlineFigure: "24,70,000 pcs per month, crochet",
   materials: [

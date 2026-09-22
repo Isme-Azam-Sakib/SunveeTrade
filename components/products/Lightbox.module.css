@@ -1,0 +1,315 @@
+/* Full-screen sample viewer. Opened from a swatch on the product board. */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 40px);
+  background: color-mix(in oklab, var(--ink) 88%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade 220ms var(--out) both;
+}
+
+.panel {
+  position: relative;
+  width: min(1120px, 100%);
+  max-height: 100%;
+  background: var(--paper);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  animation: lift 280ms var(--out) both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes lift {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+    scale: 0.985;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Stage
+-------------------------------------------------------------------------- */
+.stage {
+  position: relative;
+  background: var(--sunken);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(62vh, 620px);
+}
+.shot {
+  position: absolute;
+  inset: 0;
+}
+/* Beats the global `.ph img { object-fit: cover }` — a swatch must be shown
+   whole, never cropped. */
+.stage .shot :global(img) {
+  object-fit: contain;
+}
+/* The stage supplies the surround, so the frame's hairline would double up. */
+.shot::after {
+  display: none;
+}
+.stageEmpty {
+  font: 500 11px/1.6 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-align: center;
+  padding: 32px;
+}
+
+/* Frame-to-frame arrows for the images belonging to one product. */
+.frames {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+.frameDot {
+  width: 30px;
+  height: 4px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--ink) 24%, transparent);
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+.frameDot[aria-current="true"] {
+  background: var(--a600);
+}
+
+/* --------------------------------------------------------------------------
+   Info
+-------------------------------------------------------------------------- */
+.info {
+  padding: clamp(26px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  background: var(--surface);
+}
+
+.eyebrow {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--a600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 0;
+  border-top: 1.5px dashed currentColor;
+  flex: none;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.desc {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: var(--graphite);
+  text-wrap: pretty;
+}
+
+.specs {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0;
+  border-top: 1.5px dashed var(--hair-strong);
+}
+.specs > div {
+  display: contents;
+}
+.specs dt,
+.specs dd {
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1.5px dashed var(--hair-strong);
+  font-size: 13.5px;
+}
+.specs dt {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding-right: 20px;
+  white-space: nowrap;
+}
+.specs dd {
+  color: var(--ink);
+  text-align: right;
+  font-weight: 500;
+}
+
+.meta {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.counter {
+  font: 500 12px/1 var(--mono);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Controls
+-------------------------------------------------------------------------- */
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--paper) 86%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 1px rgba(20, 22, 26, 0.09);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: var(--ease);
+}
+.close:hover {
+  background: var(--paper);
+}
+.close:active {
+  scale: 0.94;
+}
+.close::before,
+.close::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+}
+.close::before {
+  rotate: 45deg;
+}
+.close::after {
+  rotate: -45deg;
+}
+
+.step {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 4;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--paper) 86%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 1px rgba(20, 22, 26, 0.09);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: var(--ease);
+}
+.step:hover {
+  background: var(--paper);
+}
+.step:active {
+  scale: 0.94;
+}
+.prev {
+  left: 14px;
+}
+.next {
+  right: 14px;
+}
+/* CSS chevron: no icon font, no SVG request. */
+.step::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+.prev::before {
+  rotate: -135deg;
+  translate: 2px 0;
+}
+.next::before {
+  rotate: 45deg;
+  translate: -2px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Stacked layout
+-------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    max-height: calc(100dvh - 24px);
+  }
+  .stage {
+    min-height: 44vh;
+  }
+  .info {
+    padding: 22px 20px 24px;
+  }
+  .step {
+    width: 40px;
+    height: 40px;
+  }
+  .name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .panel {
+    animation: none;
+  }
+}

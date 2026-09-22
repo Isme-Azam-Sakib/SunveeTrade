@@ -12,8 +12,8 @@ import { useScrollFrame } from "@/lib/use-scroll-frame";
 import styles from "./Factory.module.css";
 
 const FACTORY_IMAGE = {
-  key: "home/factory-needle-loom.jpg",
-  alt: "Warp threads on a needle loom",
+  key: "home/needle-loom-machine.jpg",
+  alt: "Needle loom machine on the factory floor",
 };
 
 const peak = Math.max(...capacity.map((row) => row.perMonth));
