@@ -9,38 +9,7 @@ import type { NextConfig } from "next";
  */
 function remotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
   const origin = process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN;
-  const patterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [
-    {
-      protocol: "https",
-      hostname: "www.shine-art.com",
-      pathname: "/**",
-    },
-    {
-      protocol: "https",
-      hostname: "shine-art.com",
-      pathname: "/**",
-    },
-    {
-      protocol: "http",
-      hostname: "www.shine-art.com",
-      pathname: "/**",
-    },
-    {
-      protocol: "http",
-      hostname: "shine-art.com",
-      pathname: "/**",
-    },
-    {
-      protocol: "https",
-      hostname: "52.79.93.16",
-      pathname: "/**",
-    },
-    {
-      protocol: "http",
-      hostname: "52.79.93.16",
-      pathname: "/**",
-    },
-  ];
+  const patterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
 
   if (!origin) return patterns;
 
