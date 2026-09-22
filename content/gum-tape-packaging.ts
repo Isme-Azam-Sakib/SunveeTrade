@@ -22,7 +22,11 @@ export const gumTapePackaging: ProductLine = {
         {
           slug: "heavy-packaging-tape",
           name: "Heavy packaging gum tape",
-          images: [],
+          images: [
+            { key: "product-lines/gum-tape-packaging/packaging-tape/heavy-packaging-tape/1.png", alt: "Packaging gum tape rolls, assorted colours" },
+            { key: "product-lines/gum-tape-packaging/packaging-tape/heavy-packaging-tape/2.png", alt: "Clear packaging tape rolls" },
+            { key: "product-lines/gum-tape-packaging/packaging-tape/heavy-packaging-tape/3.png", alt: "Yellow packaging tape roll" },
+          ],
           specs: [
             { label: "Capacity", value: "2,08,000 rolls per month" },
             { label: "Feature", value: "Tamper-evident" },

@@ -486,5 +486,104 @@ export const rhinestonesStuds: ProductLine = {
         },
       ],
     },
+    {
+      slug: "hot-fix-motifs",
+      name: "Hot-fix motif designs",
+      summary:
+        "Pre-set rhinestone and stud motifs, ready for heat-press application to garments and accessories.",
+      items: [
+        {
+          slug: "rose-flower-motif",
+          name: "Rose and flower motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/rose-flower-motif/1.jpg", alt: "Rose and flower rhinestone motif" },
+          ],
+        },
+        {
+          slug: "skull-crest-motif",
+          name: "Skull crest motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/skull-crest-motif/1.jpg", alt: "Ornate skull crest rhinestone motif" },
+          ],
+        },
+        {
+          slug: "floral-applique",
+          name: "Floral applique",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/floral-applique/1.jpg", alt: "Pink floral pearl applique, pair" },
+          ],
+        },
+        {
+          slug: "faith-text-motif",
+          name: "Faith text motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/faith-text-motif/1.png", alt: "Ornate FAITH text rhinestone motif" },
+          ],
+        },
+        {
+          slug: "cross-wings-motif",
+          name: "Cross and wings motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/cross-wings-motif/1.png", alt: "Cross with angel wings rhinestone motif" },
+          ],
+        },
+        {
+          slug: "skull-pirate-motif",
+          name: "Skull pirate motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/skull-pirate-motif/1.jpg", alt: "Pirate skull rhinestone motif" },
+          ],
+        },
+        {
+          slug: "cross-motif",
+          name: "Cross motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/cross-motif/1.jpg", alt: "Radiant cross rhinestone motif" },
+          ],
+        },
+        {
+          slug: "butterfly-lily-motif",
+          name: "Butterfly and lily motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/butterfly-lily-motif/1.jpg", alt: "Butterfly and lily rhinestone motif" },
+          ],
+        },
+        {
+          slug: "butterfly-car-decal",
+          name: "Butterfly motif",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/butterfly-car-decal/1.jpg", alt: "Butterfly rhinestone motif set" },
+          ],
+        },
+        {
+          slug: "assorted-appliques",
+          name: "Assorted appliques",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/assorted-appliques/1.jpg", alt: "Assorted rhinestone appliques: flags, hearts, letters" },
+          ],
+        },
+        {
+          slug: "rhinestone-sticker-sheets",
+          name: "Rhinestone sticker sheets",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/rhinestone-sticker-sheets/1.jpg", alt: "Rhinestone sticker sheets, assorted colours" },
+          ],
+        },
+        {
+          slug: "rhinestone-trim-roll",
+          name: "Rhinestone trim roll",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/rhinestone-trim-roll/1.png", alt: "Rhinestone trim roll" },
+          ],
+        },
+        {
+          slug: "motif-pattern-sample",
+          name: "Motif pattern sample",
+          images: [
+            { key: "product-lines/rhinestones-studs/hot-fix-motifs/motif-pattern-sample/1.jpg", alt: "Rhinestone floral motif pattern sample" },
+          ],
+        },
+      ],
+    },
   ],
 };

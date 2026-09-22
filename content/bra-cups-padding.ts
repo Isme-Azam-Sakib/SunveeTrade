@@ -281,6 +281,28 @@ export const braCupsPadding: ProductLine = {
       ],
     },
     {
+      slug: "moulded-cups",
+      name: "Moulded cup shapes",
+      summary: "Seamless moulded foam cups graded to your size set, by shape.",
+      items: [
+        {
+          slug: "triangle-cup",
+          name: "Triangle cup",
+          images: [
+            { key: "product-lines/bra-cups-padding/moulded-cups/triangle-cup/1.jpg", alt: "Triangle foam cup inserts" },
+            { key: "product-lines/bra-cups-padding/moulded-cups/triangle-cup/2.jpg", alt: "Triangle cup, black and white" },
+          ],
+        },
+        {
+          slug: "round-cup",
+          name: "Round cup",
+          images: [
+            { key: "product-lines/bra-cups-padding/moulded-cups/round-cup/1.png", alt: "Round moulded foam cups, black and white" },
+          ],
+        },
+      ],
+    },
+    {
       slug: "shoulder-padding",
       name: "Shoulder padding",
       summary: "Laminated high-density foam pads for tailoring and outerwear.",
@@ -288,7 +310,10 @@ export const braCupsPadding: ProductLine = {
         {
           slug: "shoulder-pad",
           name: "Shoulder pad",
-          images: [],
+          images: [
+            { key: "product-lines/bra-cups-padding/shoulder-padding/shoulder-pad/1.jpg", alt: "Shoulder pad sets, white and black" },
+            { key: "product-lines/bra-cups-padding/shoulder-padding/shoulder-pad/2.jpg", alt: "Shoulder pad foam, close-up" },
+          ],
           specs: [{ label: "Capacity", value: "7,80,640 pairs per month" }],
         },
       ],

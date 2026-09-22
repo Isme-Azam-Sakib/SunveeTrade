@@ -20,8 +20,20 @@ export const lingerieElastic: ProductLine = {
       summary:
         "Picot, scalloped and plain edges for necklines and leg openings.",
       items: [
-        { slug: "picot-elastic", name: "Picot elastic", images: [] },
-        { slug: "fold-over-elastic", name: "Fold-over elastic", images: [] },
+        {
+          slug: "picot-elastic",
+          name: "Picot elastic",
+          images: [
+            { key: "product-lines/lingerie-elastic/edge-elastic/picot-elastic/1.jpg", alt: "Picot elastic straps in assorted colours" },
+          ],
+        },
+        {
+          slug: "fold-over-elastic",
+          name: "Fold-over elastic",
+          images: [
+            { key: "product-lines/lingerie-elastic/edge-elastic/fold-over-elastic/1.jpg", alt: "Fold-over elastic in assorted colours" },
+          ],
+        },
       ],
     },
     {
@@ -29,8 +41,20 @@ export const lingerieElastic: ProductLine = {
       name: "Band elastic",
       summary: "Under-bust and waistband elastics with plush or velvet backs.",
       items: [
-        { slug: "plush-back-band", name: "Plush back band", images: [] },
-        { slug: "velvet-elastic", name: "Velvet elastic", images: [] },
+        {
+          slug: "plush-back-band",
+          name: "Plush back band",
+          images: [
+            { key: "product-lines/lingerie-elastic/band-elastic/plush-back-band/1.jpg", alt: "Plush back band elastic, nude tone" },
+          ],
+        },
+        {
+          slug: "velvet-elastic",
+          name: "Velvet elastic",
+          images: [
+            { key: "product-lines/lingerie-elastic/band-elastic/velvet-elastic/1.jpg", alt: "Velvet-back bra strap elastic" },
+          ],
+        },
       ],
     },
     {
@@ -39,11 +63,19 @@ export const lingerieElastic: ProductLine = {
       summary:
         "Shoulder strap elastic and underwire channelling tape, sized to your wire gauge.",
       items: [
-        { slug: "strap-elastic", name: "Strap elastic", images: [] },
+        {
+          slug: "strap-elastic",
+          name: "Strap elastic",
+          images: [
+            { key: "product-lines/lingerie-elastic/strap-and-channelling/strap-elastic/1.jpg", alt: "Bra strap elastic, black, nude and white" },
+          ],
+        },
         {
           slug: "underwire-channelling",
           name: "Underwire channelling",
-          images: [],
+          images: [
+            { key: "product-lines/lingerie-elastic/strap-and-channelling/underwire-channelling/1.jpg", alt: "Underwire channelling tape" },
+          ],
         },
       ],
     },
