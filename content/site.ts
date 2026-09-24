@@ -42,7 +42,7 @@ export const primaryNav = [
   { href: "/about#manufacturing", label: "Manufacturing" },
   { href: "/about#sustainability", label: "Sustainability" },
   { href: "/#partners", label: "Buying Partners" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 /** `plain` prints the raw integer — a year should not be comma-grouped. */

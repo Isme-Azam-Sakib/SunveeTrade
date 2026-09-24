@@ -5,7 +5,7 @@ import type { MediaRef } from "./types";
  * path (e.g. `about/story-sewing.jpg`) once real photography exists; `mediaUrl`
  * resolves both forms.
  */
-const px = (id: number, w = 1600) =>
+export const px = (id: number, w = 1600) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const aboutImages = {
