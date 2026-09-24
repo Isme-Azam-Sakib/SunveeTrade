@@ -15,10 +15,10 @@ import { Logo } from "./Logo";
 import styles from "./Footer.module.css";
 
 const COMPANY_LINKS = [
-  { href: "/#about", label: "About us" },
-  { href: "/#manufacturing", label: "Manufacturing" },
-  { href: "/#sustainability", label: "Sustainability" },
-  { href: "/#certificates", label: "Certificates" },
+  { href: "/about", label: "About us" },
+  { href: "/about#manufacturing", label: "Manufacturing" },
+  { href: "/about#sustainability", label: "Sustainability" },
+  { href: "/about#certificates", label: "Certificates" },
   { href: "/#partners", label: "Buying partners" },
 ];
 

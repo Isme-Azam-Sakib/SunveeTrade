@@ -37,10 +37,10 @@ export const offices: readonly Office[] = [
 ];
 
 export const primaryNav = [
-  { href: "/#about", label: "About" },
-  { href: "/#products", label: "Products" },
-  { href: "/#manufacturing", label: "Manufacturing" },
-  { href: "/#sustainability", label: "Sustainability" },
+  { href: "/about", label: "About" },
+  { href: "/products", label: "Products" },
+  { href: "/about#manufacturing", label: "Manufacturing" },
+  { href: "/about#sustainability", label: "Sustainability" },
   { href: "/#partners", label: "Buying Partners" },
   { href: "/#contact", label: "Contact" },
 ] as const;

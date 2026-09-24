@@ -1,0 +1,743 @@
+/* ---------------------------------------------------------------------------
+   Header
+--------------------------------------------------------------------------- */
+.head {
+  padding: 56px 0 clamp(48px, 6vw, 72px);
+}
+.crumbs {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+.crumbs a:hover {
+  color: var(--ink);
+}
+.title {
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  margin: 0 0 24px;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.title em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--a600);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 44px;
+  margin: 36px 0 0;
+  padding-top: 16px;
+  border-top: 1.5px dashed var(--hair-strong);
+}
+.facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.facts dt {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cover {
+  height: clamp(300px, 40vw, 540px);
+  margin-bottom: 0;
+}
+.coverFrame {
+  height: 100%;
+  border-radius: var(--r-xl);
+  margin: 0;
+}
+.coverImg {
+  scale: 1.1;
+  translate: 0 calc((var(--cover, 0.5) - 0.5) * -40px);
+}
+
+/* In-page index: jump links, so a long page stays navigable. */
+.index {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+.index > span {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex: none;
+}
+.index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.index a {
+  display: block;
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--graphite);
+  box-shadow: inset 0 0 0 1px var(--hair-strong);
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 150ms;
+}
+.index a:hover {
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
+   Story
+--------------------------------------------------------------------------- */
+.statement {
+  font-weight: 300;
+  font-size: clamp(1.7rem, 3.4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  max-width: 26ch;
+  margin: 0;
+}
+.statement em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--a600);
+}
+.statement span {
+  opacity: var(--o, 1);
+  transition-property: opacity;
+  transition-duration: 120ms;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: clamp(56px, 7vw, 96px);
+}
+.storyCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 52ch;
+}
+.storyCopy p {
+  margin: 0;
+  color: var(--graphite);
+}
+.storyCopy p:first-child {
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.duo {
+  position: relative;
+  height: clamp(380px, 42vw, 520px);
+}
+.duoA,
+.duoB {
+  position: absolute;
+  margin: 0;
+  border-radius: var(--r-lg);
+}
+.duoA {
+  left: 0;
+  top: 0;
+  width: 62%;
+  height: 78%;
+  translate: 0 calc((var(--p, 0.5) - 0.5) * 36px);
+}
+.duoB {
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  height: 58%;
+  box-shadow: 0 0 0 8px var(--paper);
+  translate: 0 calc((var(--p, 0.5) - 0.5) * -56px);
+}
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: clamp(56px, 7vw, 96px);
+}
+.offer {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 32px 28px 34px;
+  box-shadow: 0 0 0 1px var(--hair);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.offer h3 {
+  margin: 12px 0 0;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.offer p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--graphite);
+}
+/* Dashed outline that sews itself around the card on hover, as on the
+   certificate cards. */
+.stitch {
+  position: absolute;
+  inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  pointer-events: none;
+  overflow: visible;
+}
+.stitch rect {
+  fill: none;
+  stroke: var(--a500);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 6;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 250ms;
+}
+.offer:hover .stitch rect {
+  opacity: 0.8;
+  animation: sew 1.6s linear infinite;
+}
+@keyframes sew {
+  to {
+    stroke-dashoffset: -26;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Mission and vision
+--------------------------------------------------------------------------- */
+.mv {
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
+}
+.mv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    50% 40% at 15% 0%,
+    rgba(217, 84, 30, 0.2),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.mv :global(.wrap) {
+  position: relative;
+}
+.mv :global(.h2) {
+  color: #fff;
+}
+.mv :global(.h2) em {
+  color: var(--a300);
+}
+.mv :global(.eyebrow) {
+  color: var(--a300);
+}
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.mvCol {
+  background: var(--ink-2);
+  border-radius: var(--r-lg);
+  padding: clamp(28px, 4vw, 48px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.mvCol h3 {
+  margin: 0 0 28px;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+.mvCol h3 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--a300);
+}
+.mvCol ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mvCol li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 8px;
+  padding: 16px 0;
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.16);
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.78);
+  transition-property: color;
+  transition-duration: 200ms;
+}
+.mvCol li:hover {
+  color: #fff;
+}
+.mvCol li :global(.fig) {
+  color: var(--a300);
+  padding-top: 2px;
+}
+.mvImg {
+  margin: 16px 0 0;
+  height: clamp(260px, 34vw, 440px);
+  border-radius: var(--r-xl);
+}
+
+/* ---------------------------------------------------------------------------
+   Values: hairline grid, like the buying-partner wall
+--------------------------------------------------------------------------- */
+.values {
+  background: var(--sunken);
+}
+.valueGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hair-strong);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--hair-strong);
+}
+.valueGrid li {
+  position: relative;
+  background: var(--paper);
+  padding: 32px 28px 36px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+.valueGrid li::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 24px;
+  border-top: 1.5px dashed var(--a500);
+  transform-origin: left;
+  scale: 0 1;
+  transition-property: scale;
+  transition-duration: 600ms;
+  transition-timing-function: var(--out);
+}
+.valueGrid li:hover {
+  background: var(--surface);
+}
+.valueGrid li:hover::after {
+  scale: 1 1;
+}
+.valueGrid b {
+  margin-top: auto;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transition-property: color, translate;
+  transition-duration: 400ms;
+  transition-timing-function: var(--spring);
+}
+.valueGrid li:hover b {
+  color: var(--a600);
+  translate: 6px 0;
+}
+.valueGrid p {
+  margin: 12px 0 28px;
+  font-size: 15px;
+  color: var(--graphite);
+}
+
+/* ---------------------------------------------------------------------------
+   Leadership
+--------------------------------------------------------------------------- */
+.leadGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.leadImg {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-xl);
+  position: sticky;
+  top: 120px;
+}
+
+/* Org chart: a dashed thread connects each tier and draws down on entry. */
+.tree {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0 0 0 28px;
+  position: relative;
+}
+.tree::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  bottom: 10px;
+  border-left: 1.5px dashed var(--a500);
+  transform-origin: top;
+  scale: 1 0;
+  transition-property: scale;
+  transition-duration: 1400ms;
+  transition-timing-function: var(--out);
+}
+.tree:global(.in)::before {
+  scale: 1 1;
+}
+.tree > li {
+  position: relative;
+  padding-bottom: 32px;
+}
+.tree > li:last-child {
+  padding-bottom: 0;
+}
+.tree > li::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--a600);
+}
+.tree > li > b {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.tree > li > span {
+  display: block;
+  margin-top: 2px;
+  font-size: 14.5px;
+  color: var(--graphite);
+}
+.tree ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tree ul li {
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--sunken);
+  box-shadow: inset 0 0 0 1px var(--hair);
+  color: var(--graphite);
+}
+
+/* ---------------------------------------------------------------------------
+   Machinery
+--------------------------------------------------------------------------- */
+.mach {
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
+}
+.mach::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    50% 40% at 85% 0%,
+    rgba(217, 84, 30, 0.2),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.mach :global(.wrap) {
+  position: relative;
+}
+.mach :global(.h2) {
+  color: #fff;
+}
+.mach :global(.h2) em {
+  color: var(--a300);
+}
+.mach :global(.lede) {
+  color: rgba(255, 255, 255, 0.66);
+}
+.mach :global(.eyebrow) {
+  color: var(--a300);
+}
+
+.machStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.machStats div {
+  background: var(--ink-2);
+  padding: 26px 24px;
+}
+.machStats b {
+  display: block;
+  font: 500 clamp(1.6rem, 2.6vw, 2.2rem) / 1 var(--mono);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.machStats span {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.machMosaic {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 12px;
+  height: clamp(220px, 28vw, 360px);
+  margin-top: 12px;
+}
+.machMosaic :global(.ph) {
+  border-radius: var(--r-md);
+  background: #23262c;
+}
+.zoom {
+  transition-property: scale;
+  transition-duration: 1200ms;
+  transition-timing-function: var(--out);
+}
+.machMosaic :global(.ph):hover .zoom {
+  scale: 1.06;
+}
+
+.machGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  margin-top: clamp(48px, 6vw, 72px);
+}
+.machGrid h3 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+.machList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 32px;
+}
+.machList li {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: baseline;
+  padding: 11px 0;
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.14);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  transition-property: color, padding-left;
+  transition-duration: 300ms;
+  transition-timing-function: var(--out);
+}
+.machList li:hover {
+  color: #fff;
+  padding-left: 6px;
+}
+.machList li :global(.fig) {
+  color: var(--a300);
+  font-size: 11px;
+}
+.unitList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.unitList li {
+  padding: 11px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ---------------------------------------------------------------------------
+   Code of conduct
+--------------------------------------------------------------------------- */
+.conduct {
+  background: var(--sunken);
+}
+.conductGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.conductImg {
+  margin: 40px 0 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-xl);
+}
+.conductList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+.conductList li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+  border-top: 1.5px dashed var(--hair-strong);
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.conductList li:last-child {
+  border-bottom: 1.5px dashed var(--hair-strong);
+}
+/* Tick drawn in CSS, in the same spirit as the arrow primitive. */
+.conductList i {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--a50);
+  position: relative;
+  transition-property: background-color, scale;
+  transition-duration: 300ms;
+  transition-timing-function: var(--spring);
+}
+.conductList i::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid var(--a600);
+  border-bottom: 2px solid var(--a600);
+  rotate: 45deg;
+  transition-property: border-color;
+  transition-duration: 300ms;
+}
+.conductList li:hover i {
+  background: var(--a600);
+  scale: 1.1;
+}
+.conductList li:hover i::after {
+  border-color: #fff;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive
+--------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .storyGrid,
+  .leadGrid,
+  .conductGrid,
+  .machGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .leadImg {
+    position: relative;
+    top: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .valueGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .offers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .index {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mvGrid,
+  .valueGrid {
+    grid-template-columns: 1fr;
+  }
+  .valueGrid li {
+    min-height: 0;
+  }
+  .machStats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .machMosaic {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .machMosaic :global(.ph) {
+    aspect-ratio: 1;
+  }
+  .m1 {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .machList {
+    columns: 1;
+  }
+  .duo {
+    height: 380px;
+  }
+}
+
+/* Reduced motion: scenes land on their final state. */
+:global(.rm) .tree::before {
+  scale: 1 1;
+}
+:global(.rm) .statement span {
+  opacity: 1;
+}

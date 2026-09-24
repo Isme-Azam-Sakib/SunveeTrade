@@ -11,6 +11,20 @@ function remotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
   const origin = process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN;
   const patterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
 
+  // Placeholder photography for pages awaiting real images.
+  patterns.push({
+    protocol: "https",
+    hostname: "images.pexels.com",
+    pathname: "/photos/**",
+  });
+
+  // Placeholder photography on pages still awaiting real images.
+  patterns.push({
+    protocol: "https",
+    hostname: "images.pexels.com",
+    pathname: "/photos/**",
+  });
+
   if (!origin) return patterns;
 
   let url: URL;
