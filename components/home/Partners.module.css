@@ -1,5 +1,4 @@
-/* A hairline grid of brand names. Each cell tracks its letters apart on hover,
-   which reads like a woven label being pulled taut. */
+/* A hairline grid of buyer logos. Greyed until hovered. */
 .wall {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -17,37 +16,21 @@
   text-align: center;
   padding: 12px;
 }
-.wall span {
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #8d8983;
-  transition-property: color, letter-spacing;
-  transition-duration: 500ms;
+.logo {
+  display: block;
+  max-width: 78%;
+  max-height: 70px;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition-property: opacity, filter, transform;
+  transition-duration: 300ms;
   transition-timing-function: var(--spring);
 }
-.wall div:hover span {
-  color: var(--ink);
-  letter-spacing: 0.06em;
-}
-.wall div:nth-child(4n + 2) span {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
-  letter-spacing: 0;
-}
-.wall div:nth-child(4n + 2):hover span {
-  letter-spacing: 0.08em;
-}
-.wall div:nth-child(5n + 3) span {
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
-}
-.wall div:nth-child(5n + 3):hover span {
-  letter-spacing: 0.2em;
+.wall div:hover .logo {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.05);
 }
 
 .you {

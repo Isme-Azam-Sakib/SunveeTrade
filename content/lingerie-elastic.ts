@@ -8,7 +8,7 @@ export const lingerieElastic: ProductLine = {
   intro:
     "A dedicated unit for intimates trims, where hand feel matters as much as elongation. Soft-touch finishes, picot edges and plush backs are developed against your handloom standard before bulk.",
   cover: {
-    key: "product-lines/lingerie-elastic/edge-elastic/fold-over-elastic/1.jpg",
+    key: "product-lines/lingerie-elastic/lingerie-elastic.jpg",
     alt: "Fold-over elastic in assorted colours",
   },
   headlineFigure: "24,96,000 pcs per month",

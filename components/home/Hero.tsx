@@ -13,10 +13,10 @@ import { clamp, prefersReducedMotion } from "@/lib/scroll-frame";
 import styles from "./Hero.module.css";
 
 const HERO_IMAGE = {
-  key: "home/crochet-elastic-rolls.jpg",
+  key: "home/crochet-elastic-roll.jpg",
   alt: "Rolls of crochet elastic in assorted colours",
 };
-const DETAIL_IMAGE = { key: "home/drawcord-detail.jpg", alt: "" };
+const DETAIL_IMAGE = { key: "home/drawcord-detail.webp", alt: "" };
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);

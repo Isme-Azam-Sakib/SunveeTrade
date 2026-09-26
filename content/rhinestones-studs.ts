@@ -8,7 +8,7 @@ export const rhinestonesStuds: ProductLine = {
   intro:
     "Hot-fix motifs and stone settings are cut, set and pressed in-house. Every stone and stud is nickel, lead and cadmium free, with adhesion tested to ten domestic washes before a motif is approved for bulk production.",
   cover: {
-    key: "product-lines/rhinestones-studs/hot-fix-rhinestones/premium-m-c-rhinestone/1.jpg",
+    key: "product-lines/rhinestones-studs/rhinestones.jpg",
     alt: "Premium machine-cut hot-fix rhinestones",
   },
   headlineFigure: "8,89,200 pcs per month, one colour",

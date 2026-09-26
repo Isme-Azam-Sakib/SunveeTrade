@@ -96,7 +96,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
     title: "STI operating system",
     description:
       "An operations philosophy built on lean manufacturing, removing waste from order to shipment.",
-    image: { key: "manufacturing/braiding-machine.jpg", alt: "" },
+    image: { key: "manufacturing/braiding-machines.jpg", alt: "" },
   },
   {
     slug: "digitalised-shop-floor",
@@ -104,7 +104,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
     title: "Digitalised shop floor",
     description:
       "ERP gives accurate, instant production status and KPI measurement for every order line.",
-    image: { key: "manufacturing/shop-floor.jpg", alt: "" },
+    image: { key: "manufacturing/shop-floors.jpg", alt: "" },
   },
   {
     slug: "five-layer-planning",
@@ -112,7 +112,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
     title: "Five-layer planning",
     description:
       "Business, capacity, operations, demand and service planning lock delivery dates before bulk starts.",
-    image: { key: "manufacturing/yarn-covering-machine.jpg", alt: "" },
+    image: { key: "manufacturing/planning.jpg", alt: "" },
   },
   {
     slug: "quality-management",
@@ -120,7 +120,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
     title: "Quality management system",
     description:
       "Quality built in through assurance, with continuous improvement toward zero defects.",
-    image: { key: "manufacturing/quality-team.jpg", alt: "" },
+    image: { key: "manufacturing/qc.jpg", alt: "" },
   },
   {
     slug: "productive-maintenance",
@@ -128,7 +128,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
     title: "Total productive maintenance",
     description:
       "Planned upkeep across 17 machine types keeps breakdowns minor and lines running.",
-    image: { key: "manufacturing/ironing-machine.jpg", alt: "" },
+    image: { key: "manufacturing/machine-line.jpg", alt: "" },
   },
 ];
 
@@ -146,7 +146,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
     description:
       "Legal minimum wages, freedom of association and equal opportunity. First aid and medical care on site. Child labour is strictly prohibited.",
     tags: ["Legal minimum wage", "Non-discrimination", "Medical care"],
-    image: { key: "sustainability/quality-team.jpg", alt: "" },
+    image: { key: "manufacturing/qc.jpg", alt: "" },
   },
   {
     slug: "process",
@@ -154,7 +154,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
     description:
       "Lean operations, total productive maintenance and a zero-defect quality system cut waste, rework and energy per piece.",
     tags: ["Lean", "TPM", "Zero-defect QMS"],
-    image: { key: "sustainability/shop-floor.jpg", alt: "" },
+    image: { key: "manufacturing/machine-line.jpg", alt: "" },
   },
   {
     slug: "product",
@@ -162,7 +162,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
     description:
       "Recycled polyester and recycled nylon keep plastic out of landfill and oceans. Organic cotton and Coolmax options, tested to OEKO-TEX Standard 100.",
     tags: ["Recycled polyester", "Recycled nylon", "Organic cotton"],
-    image: { key: "sustainability/product-elastic.jpg", alt: "" },
+    image: { key: "product-lines/rhinestones-studs/rhinestones.jpg", alt: "" },
   },
   {
     slug: "place",
@@ -170,7 +170,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
     description:
       "Fire safety, pure drinking water for everyone and local labour law upheld across our Gazipur factory.",
     tags: ["Fire safety", "Pure water", "Labour law"],
-    image: { key: "sustainability/place.jpg", alt: "" },
+    image: { key: "sustainability/factory.jpg", alt: "" },
   },
 ];
 

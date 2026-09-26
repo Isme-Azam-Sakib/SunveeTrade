@@ -8,7 +8,7 @@ export const gumTapePackaging: ProductLine = {
   intro:
     "Carton and polybag tapes made to the same QA standard as the trims they ship with. Heavy packaging tape is tamper-evident, and adhesive is matched to your carton board and storage climate.",
   cover: {
-    key: "product-lines/gum-tape-packaging/packaging-tape/heavy-packaging-tape/1.png",
+    key: "product-lines/gum-tape-packaging/gum-tapes.webp",
     alt: "Packaging gum tape rolls, assorted colours",
   },
   headlineFigure: "2,08,000 rolls per month",

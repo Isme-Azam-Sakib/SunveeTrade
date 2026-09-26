@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import { buyingPartners } from "@/content/site";
+import { partnerLogos } from "@/content/partner-logos";
 
 import styles from "./Partners.module.css";
 
@@ -19,13 +20,20 @@ export function Partners() {
         </div>
 
         <div className={styles.wall}>
-          {buyingPartners.map((brand, i) => (
+          {partnerLogos.map((logo, i) => (
             <div
-              key={brand}
+              key={logo.file}
               data-rise
               style={{ "--i": i % 8 } as React.CSSProperties}
             >
-              <span>{brand}</span>
+              <Image
+                src={`/media/partners/${logo.file}.png`}
+                alt={logo.name}
+                width={logo.w}
+                height={logo.h}
+                className={styles.logo}
+                style={{ width: `${logo.w * 0.6}px`, height: "auto" }}
+              />
             </div>
           ))}
           <Link

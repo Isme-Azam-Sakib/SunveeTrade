@@ -8,7 +8,7 @@ export const ribbonEmbossedElastic: ProductLine = {
   intro:
     "Embossing turns a flat band into a branded one. Silicone and pattern embossing raise a logo that survives wash and stretch; grip embossing adds slip resistance for activewear waistbands.",
   cover: {
-    key: "product-lines/ribbon-embossed-elastic/cover.jpg",
+    key: "product-lines/ribbon-embossed-elastic/embossed-ribbons.jpg",
     alt: "Embossed elastic with raised logo pattern",
   },
   headlineFigure: "Slip-resistant grip for activewear",
