@@ -18,9 +18,27 @@
   position: absolute;
   inset: 0;
 }
-.bg img {
-  object-fit: cover;
+/* The scroll-driven zoom lives on this wrapper; the iframe itself only ever
+   handles the video's own "cover" crop. */
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   scale: var(--bs, 1.25);
+}
+/* Oversize + centre, the standard trick for cropping an iframe like
+   `object-fit: cover` (no such property exists for embedded documents). */
+.bgVideo iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 */
+  translate: -50% -50%;
+  border: 0;
+  pointer-events: none;
 }
 .bg::after {
   content: "";

@@ -1,15 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 
-import { mediaUrl } from "@/lib/images";
 import { easeInCubic, easeOutCubic, map } from "@/lib/scroll-frame";
 import { useBuild, useScrollFrame } from "@/lib/use-scroll-frame";
 
 import styles from "./MaskReveal.module.css";
 
 const CUT_TEXT = "Made to spec";
+
+/**
+ * Muted, looping, chromeless — a moving backdrop, not a video to watch.
+ * `loop=1` only works on a single video when `playlist` repeats its own id.
+ */
+const BG_VIDEO_ID = "q-boolpi1DI";
+const BG_VIDEO_SRC =
+  `https://www.youtube-nocookie.com/embed/${BG_VIDEO_ID}` +
+  `?autoplay=1&mute=1&loop=1&playlist=${BG_VIDEO_ID}` +
+  `&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`;
 
 export function MaskReveal() {
   const wrapRef = useRef<HTMLElement>(null);
@@ -117,14 +125,15 @@ export function MaskReveal() {
   return (
     <section className={styles.wrap} aria-labelledby="mask-title" ref={wrapRef}>
       <div className={styles.stick}>
-        <div className={styles.bg} ref={bgRef}>
-          <Image
-            src={mediaUrl("home/rhinestone-backdrop.jpg")}
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="100vw"
-          />
+        <div className={styles.bg} ref={bgRef} aria-hidden="true">
+          <div className={styles.bgVideo}>
+            <iframe
+              src={BG_VIDEO_SRC}
+              title="Background video"
+              tabIndex={-1}
+              allow="autoplay; encrypted-media"
+            />
+          </div>
         </div>
 
         <svg className={styles.svg} aria-hidden="true" ref={svgRef}>
