@@ -13,10 +13,13 @@ import { clamp, prefersReducedMotion } from "@/lib/scroll-frame";
 import styles from "./Hero.module.css";
 
 const HERO_IMAGE = {
-  key: "home/crochet-elastic-roll.jpg",
-  alt: "Rolls of crochet elastic in assorted colours",
+  key: "home/rhinestone-backdrop.jpg",
+  alt: "Faceted hot-fix rhinestones in iridescent colours",
 };
-const DETAIL_IMAGE = { key: "home/drawcord-detail.webp", alt: "" };
+const DETAIL_IMAGE = {
+  key: "home/details.jpg",
+  alt: "Iridescent metal studs on dark ground",
+};
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -129,7 +132,9 @@ export function Hero() {
           >
             <span className={styles.inlineImg} aria-hidden="true">
               <Image
-                src={mediaUrl("home/lingerie-strap-trim.jpg")}
+                src={mediaUrl(
+                  "product-lines/rhinestones-studs/title-image.jpg",
+                )}
                 alt=""
                 fill
                 sizes="140px"
@@ -187,13 +192,13 @@ export function Hero() {
               <div className={styles.tagTop}>
                 Swing tag <i />
               </div>
-              <h3>Crochet elastic</h3>
+              <h3>Rhinestones &amp; studs</h3>
               <p>
-                Monofilament nylon yarn
+                Hot-fix stones and metal studs
                 <br />
-                UV resistant, high tensile
+                Nickel, lead &amp; cadmium free
                 <br />
-                <b>24,70,000 pcs per month</b>
+                <b>8,89,200 pcs per month</b>
               </p>
             </aside>
           </div>
