@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 import { QuoteForm } from "@/components/quote/QuoteForm";
 import { productLines } from "@/content/products";
-import { company, offices } from "@/content/site";
+import { company, companyProfile, offices } from "@/content/site";
 import { mediaUrl } from "@/lib/images";
 import { easeInOutCubic, map } from "@/lib/scroll-frame";
 import { useScrollFrame } from "@/lib/use-scroll-frame";
@@ -16,10 +16,14 @@ import styles from "./Footer.module.css";
 
 const COMPANY_LINKS = [
   { href: "/about", label: "About us" },
-  { href: "/about#manufacturing", label: "Manufacturing" },
-  { href: "/about#sustainability", label: "Sustainability" },
-  { href: "/about#certificates", label: "Certificates" },
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/capabilities#certificates", label: "Certificates" },
   { href: "/#partners", label: "Buying partners" },
+  {
+    href: companyProfile.href,
+    label: companyProfile.label,
+    download: companyProfile.filename,
+  },
 ];
 
 export function Footer() {
@@ -119,7 +123,13 @@ export function Footer() {
             <ul>
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
+                  {"download" in link && link.download ? (
+                    <a href={link.href} download={link.download}>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href}>{link.label}</Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -47,7 +47,9 @@ function remotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
 }
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["192.168.1.105"],
+  // Any host on the LAN, so testing from a phone survives DHCP handing this
+  // machine a new address.
+  allowedDevOrigins: ["192.168.1.*"],
   images: {
     remotePatterns: remotePatterns(),
     // Catalog photography is content-hashed on upload and effectively

@@ -39,11 +39,17 @@ export const offices: readonly Office[] = [
 export const primaryNav = [
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
-  { href: "/about#manufacturing", label: "Manufacturing" },
-  { href: "/about#sustainability", label: "Sustainability" },
+  { href: "/capabilities", label: "Capabilities" },
   { href: "/#partners", label: "Buying Partners" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+/** Public PDF of the full company profile for buyer diligence. */
+export const companyProfile = {
+  href: "/downloads/sunvee-trade-company-profile.pdf",
+  filename: "Sunvee-Trade-International-Company-Profile.pdf",
+  label: "Download company profile",
+} as const;
 
 /** `plain` prints the raw integer — a year should not be comma-grouped. */
 export const companyStats: readonly {

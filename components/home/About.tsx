@@ -211,7 +211,10 @@ export function About() {
               management board, engineers and QA teams keep every consignment to
               the buyer&rsquo;s terms, deadline included.
             </p>
-            <StitchLink href="/about">Read our story</StitchLink>
+            <div className={styles.sideLinks}>
+              <StitchLink href="/about">Read our story</StitchLink>
+              <StitchLink href="/capabilities">See capabilities</StitchLink>
+            </div>
           </div>
         </div>
 

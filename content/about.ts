@@ -41,11 +41,22 @@ export const aboutIndex = [
   { href: "#mission", label: "Mission and vision" },
   { href: "#values", label: "Values" },
   { href: "#leadership", label: "Leadership" },
-  { href: "#manufacturing", label: "Manufacturing" },
+] as const;
+
+export const capabilitiesIndex = [
+  { href: "#manufacturing", label: "Manufacturing systems" },
   { href: "#machinery", label: "Machinery" },
   { href: "#sustainability", label: "Sustainability" },
   { href: "#conduct", label: "Code of conduct" },
   { href: "#certificates", label: "Certificates" },
+  { href: "#profile", label: "Company profile" },
+] as const;
+
+export const capabilitiesFacts = [
+  { label: "Production units", value: "9" },
+  { label: "Machine types", value: "17" },
+  { label: "Sustainability pillars", value: "4" },
+  { label: "Certifications", value: "ISO · OEKO-TEX" },
 ] as const;
 
 export const offerings = [
