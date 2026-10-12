@@ -473,17 +473,17 @@ export const rhinestonesStuds: ProductLine = {
             { label: "Temperature resistance", value: "Up to 200°C" },
           ],
         },
-        {
-          slug: "catalog",
-          name: "Catalog",
-          description: "Catalog is the best media for customer who always wants to see actual samples. That&#8217;s the reason why Shine Art keeps making numerous effort to make better catalog, and, now, it became an industrial standard which is referred by customers from all over the world. Please click and check our various catalogs.",
-          images: [
-            { key: "product-lines/rhinestones-studs/application-accessories/catalog/1.png", alt: "6 trial" },
-          ],
-          specs: [
-            { label: "Temperature resistance", value: "Up to 200°C" },
-          ],
-        },
+        // {
+        //   slug: "catalog",
+        //   name: "Catalog",
+        //   description: "Catalog is the best media for customer who always wants to see actual samples. That&#8217;s the reason why Shine Art keeps making numerous effort to make better catalog, and, now, it became an industrial standard which is referred by customers from all over the world. Please click and check our various catalogs.",
+        //   images: [
+        //     { key: "product-lines/rhinestones-studs/application-accessories/catalog/1.png", alt: "6 trial" },
+        //   ],
+        //   specs: [
+        //     { label: "Temperature resistance", value: "Up to 200°C" },
+        //   ],
+        // },
       ],
     },
     {

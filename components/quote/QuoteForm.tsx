@@ -5,6 +5,7 @@ import { useRef, useState, type FormEvent } from "react";
 
 import { Arrow } from "@/components/ui/Arrow";
 import { productLines } from "@/content/products";
+import { company } from "@/content/site";
 import type { QuoteFieldErrors, QuoteResponse } from "@/lib/quote-schema";
 
 import styles from "./QuoteForm.module.css";
@@ -64,7 +65,7 @@ export function QuoteForm() {
       setStatus({
         state: "failed",
         message:
-          "We could not reach the server. Please check your connection, or email sohag@sunveeintl.com.",
+          `We could not reach the server. Please check your connection, or email ${company.salesEmail}.`,
       });
     } finally {
       // A Turnstile token is single-use.

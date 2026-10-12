@@ -15,12 +15,18 @@ interface Props {
   categories: readonly ProductCategory[];
   /** Used to label the board for assistive tech. */
   lineName: string;
+  /** When false, product blurbs are omitted from the details lightbox. */
+  showDescription?: boolean;
 }
 
 /** Specs are a caption on the card; the rest waits in the viewer. */
 const SPECS_ON_CARD = 2;
 
-export function LineGallery({ categories, lineName }: Props) {
+export function LineGallery({
+  categories,
+  lineName,
+  showDescription = true,
+}: Props) {
   const boardRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(categories[0]?.slug ?? "");
@@ -35,12 +41,12 @@ export function LineGallery({ categories, lineName }: Props) {
           categorySlug: category.slug,
           categoryName: category.name,
           name: item.name,
-          description: item.description,
+          description: showDescription ? item.description : undefined,
           images: item.images,
           specs: item.specs,
         })),
       ),
-    [categories],
+    [categories, showDescription],
   );
 
   /** Flat index by key, so a card knows where it sits in the viewer's order. */

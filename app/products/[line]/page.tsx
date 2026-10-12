@@ -108,7 +108,11 @@ export default async function ProductLinePage(
         style={{ paddingBottom: "clamp(96px,11vw,150px)" }}
         aria-label={`${line.name} catalogue`}
       >
-        <LineGallery categories={line.categories} lineName={line.name} />
+        <LineGallery
+          categories={line.categories}
+          lineName={line.name}
+          showDescription={line.slug !== "rhinestones-studs"}
+        />
 
         <p className={styles.close}>
           <StitchLink href="/#contact">

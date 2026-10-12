@@ -30,7 +30,7 @@ export const aboutImages = {
 } satisfies Record<string, MediaRef>;
 
 export const aboutFacts = [
-  { label: "Established", value: "2014" },
+  { label: "Established", value: "2024" },
   { label: "Based in", value: "Gazipur, Bangladesh" },
   { label: "Orientation", value: "100% export" },
   { label: "Certified", value: "ISO 9001:2015" },

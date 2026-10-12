@@ -11,12 +11,12 @@ export const company = {
   shortName: "Sunvee",
   tagline: "House of trims, accessories and value-adding services",
   description:
-    "100% export-oriented manufacturer and supplier of garment trims, accessories and packaging.",
-  established: 2014,
+    "Garments Accessories Manufacturer, Exporter, Importer, & Supplier",
+  established: 2024,
   phone: "+88 09640 234 234",
   phoneHref: "tel:+8809640234234",
-  email: "info@sunveeintl.com",
-  salesEmail: "sohag@sunveeintl.com",
+  email: "sales@sunveeintl.com",
+  salesEmail: "sales@sunveeintl.com",
 } as const;
 
 export const offices: readonly Office[] = [
@@ -57,7 +57,7 @@ export const companyStats: readonly {
   label: string;
   plain: boolean;
 }[] = [
-  { value: 2014, label: "Year established", plain: true },
+  { value: 2024, label: "Year established", plain: true },
   { value: 6, label: "Strategic business units", plain: false },
   { value: 17, label: "Global brands supplied", plain: false },
   { value: 2, label: "International certifications", plain: false },
@@ -188,6 +188,7 @@ export const certificates: readonly Certificate[] = [
     title: "Quality management system",
     description:
       "Covers the manufacture, supply, import and export of garment accessories.",
+    previewSlug: "iso",
   },
   {
     mark: "OEKO-TEX",
@@ -196,6 +197,7 @@ export const certificates: readonly Certificate[] = [
     title: "Tested for harmful substances",
     description:
       "Independent proof that our textile trims are safe and responsibly produced.",
+    previewSlug: "oekotex",
   },
 ];
 

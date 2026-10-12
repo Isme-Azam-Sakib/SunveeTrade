@@ -73,6 +73,8 @@ export interface Certificate {
   readonly issuer: string;
   readonly title: string;
   readonly description: string;
+  /** View-only preview slug served by `/api/certificates/[slug]`. */
+  readonly previewSlug?: "iso" | "oekotex";
 }
 
 export interface ManufacturingSystem {

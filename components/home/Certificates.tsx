@@ -1,9 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 import { StitchLink } from "@/components/ui/StitchLink";
 import { certificates } from "@/content/site";
+import type { Certificate } from "@/content/types";
 
+import { CertificatePreview } from "./CertificatePreview";
 import styles from "./Certificates.module.css";
 
 export function Certificates() {
+  const [active, setActive] = useState<Certificate | null>(null);
+
   return (
     <section className="sec" id="certificates" aria-labelledby="cert-title">
       <div className="wrap">
@@ -12,8 +20,8 @@ export function Certificates() {
             Audited by <em>named issuers.</em>
           </h2>
           <p className="lede">
-            Certificate copies and test reports are sent with the first
-            quotation, or on request.
+            Preview certificates here. Official copies and test reports are
+            sent with the first quotation, or on request.
           </p>
         </div>
 
@@ -42,13 +50,30 @@ export function Certificates() {
                   <span className="fig">
                     {certificate.mark} {certificate.standard}
                   </span>
-                  <StitchLink href="/#contact">Request a copy</StitchLink>
+                  {certificate.previewSlug ? (
+                    <button
+                      type="button"
+                      className="link"
+                      onClick={() => setActive(certificate)}
+                    >
+                      View certificate
+                    </button>
+                  ) : (
+                    <StitchLink href="/#contact">Request a copy</StitchLink>
+                  )}
                 </div>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      {active ? (
+        <CertificatePreview
+          certificate={active}
+          onClose={() => setActive(null)}
+        />
+      ) : null}
     </section>
   );
 }

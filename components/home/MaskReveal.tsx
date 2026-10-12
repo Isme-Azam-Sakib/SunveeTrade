@@ -166,7 +166,7 @@ export function MaskReveal() {
         <div className={styles.final} ref={finalRef}>
           <div>
             <h2 id="mask-title">
-              Six product lines, <em>one supplier.</em>
+              Six product lines, <em>one origin.</em>
             </h2>
             <p>
               Sampled before bulk, then delivered on the dates in your order.

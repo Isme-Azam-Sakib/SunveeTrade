@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
   // Any host on the LAN, so testing from a phone survives DHCP handing this
   // machine a new address.
   allowedDevOrigins: ["192.168.1.*"],
+  // Keep certificate PDFs outside `public/` but still ship them with the
+  // preview API route on Vercel (file tracing would otherwise omit them).
+  outputFileTracingIncludes: {
+    "/api/certificates/[slug]": ["./private/certificates/**/*"],
+  },
   images: {
     remotePatterns: remotePatterns(),
     // Catalog photography is content-hashed on upload and effectively

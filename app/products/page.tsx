@@ -25,7 +25,7 @@ export default function ProductsIndexPage() {
           <Link href="/">Home</Link> / Products
         </p>
         <h1 className={styles.title}>
-          Six product lines, <em>one supplier.</em>
+          Six product lines, <em>one origin.</em>
         </h1>
         <p className="lede">
           Each business unit runs its own machines and QA, so a single order can

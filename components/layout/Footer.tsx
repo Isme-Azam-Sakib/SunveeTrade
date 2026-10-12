@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
+import { CertificatePreview } from "@/components/home/CertificatePreview";
 import { QuoteForm } from "@/components/quote/QuoteForm";
 import { productLines } from "@/content/products";
-import { company, companyProfile, offices } from "@/content/site";
+import {
+  certificates,
+  company,
+  companyProfile,
+  offices,
+} from "@/content/site";
+import type { Certificate } from "@/content/types";
 import { mediaUrl } from "@/lib/images";
 import { easeInOutCubic, map } from "@/lib/scroll-frame";
 import { useScrollFrame } from "@/lib/use-scroll-frame";
@@ -30,6 +37,7 @@ export function Footer() {
   const closeRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const bleedRef = useRef<HTMLParagraphElement>(null);
+  const [activeCert, setActiveCert] = useState<Certificate | null>(null);
 
   useScrollFrame(({ vh }) => {
     const close = closeRef.current;
@@ -113,8 +121,25 @@ export function Footer() {
             <Logo />
             <p>{company.description}</p>
             <div className={styles.badges}>
-              <span>ISO 9001:2015</span>
-              <span>OEKO-TEX 100</span>
+              {certificates.map((certificate) =>
+                certificate.previewSlug ? (
+                  <button
+                    type="button"
+                    key={certificate.standard}
+                    onClick={() => setActiveCert(certificate)}
+                  >
+                    {certificate.mark === "OEKO-TEX"
+                      ? "OEKO-TEX 100"
+                      : `${certificate.mark} ${certificate.standard}`}
+                  </button>
+                ) : (
+                  <span key={certificate.standard}>
+                    {certificate.mark === "OEKO-TEX"
+                      ? "OEKO-TEX 100"
+                      : `${certificate.mark} ${certificate.standard}`}
+                  </span>
+                ),
+              )}
             </div>
           </div>
 
@@ -177,6 +202,13 @@ export function Footer() {
           {company.shortName}
         </p>
       </footer>
+
+      {activeCert ? (
+        <CertificatePreview
+          certificate={activeCert}
+          onClose={() => setActiveCert(null)}
+        />
+      ) : null}
     </section>
   );
 }

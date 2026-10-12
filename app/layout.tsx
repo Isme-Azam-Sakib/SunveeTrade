@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     title: `${company.name} | Garment trims and accessories`,
     description:
-      "Garment trims, accessories and packaging from nine production units in Gazipur, supplying global brands since 2014.",
+      "Garment trims, accessories and packaging from nine production units in Gazipur, supplying global brands since 2024.",
   },
   robots: {
     index: true,

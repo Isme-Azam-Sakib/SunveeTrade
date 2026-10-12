@@ -21,7 +21,7 @@ export function AboutHero() {
         <p className="lede" data-enter style={enter(2)}>
           Sunvee Trade International is a 100% export-oriented manufacturer of
           garment trims, accessories and packaging, run from Gazipur, Bangladesh
-          since 2014.
+          since 2024.
         </p>
 
         <dl className={styles.facts} data-enter style={enter(3)}>

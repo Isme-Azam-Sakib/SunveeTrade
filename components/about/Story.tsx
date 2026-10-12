@@ -89,7 +89,7 @@ export function Story() {
         <div className={styles.storyGrid}>
           <div className={styles.storyCopy} data-rise>
             <p>
-              Sunvee Trade International was established in 2014 as a
+              Sunvee Trade International was established in 2024 as a
               high-class, machine-oriented trims and accessories unit. It has
               since expanded its accessories hub to deliver complete packaging,
               apparel branding and supply chain solutions.

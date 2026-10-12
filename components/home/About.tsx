@@ -22,7 +22,7 @@ const ABOUT_IMAGE = {
  * is intact without JavaScript and there is no reflow on hydration.
  */
 const HEADLINE: readonly { text: string; em?: boolean }[] = [
-  { text: "Since 2014 we have grown from a machine-led trims unit into a " },
+  { text: "Since 2024 we have grown from a machine-led trims unit into a " },
   { text: "one-stop accessory hub", em: true },
   { text: ", adding brand value at every stitch of the supply chain." },
 ];

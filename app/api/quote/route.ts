@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import { company } from "@/content/site";
 import { sendQuoteEmail } from "@/lib/quote-email";
 import {
   quoteRequestSchema,
@@ -14,8 +15,7 @@ import { verifyTurnstile } from "@/lib/turnstile";
 /** Lead delivery must never be served from a cache. */
 export const dynamic = "force-dynamic";
 
-const GENERIC_ERROR =
-  "We could not send your request just now. Please email sohag@sunveeintl.com and we will pick it up straight away.";
+const GENERIC_ERROR = `We could not send your request just now. Please email ${company.salesEmail} and we will pick it up straight away.`;
 
 function json(body: QuoteResponse, status: number, headers?: HeadersInit) {
   return NextResponse.json(body, { status, headers });
