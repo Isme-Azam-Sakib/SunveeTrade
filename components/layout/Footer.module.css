@@ -98,8 +98,10 @@
   color: #fff;
 }
 .foot :global(.logo) {
-  color: #fff;
   margin-bottom: 18px;
+}
+.foot :global(.logo-img) {
+  height: 26px;
 }
 
 .office + .office {
@@ -118,19 +120,16 @@
   gap: 8px;
   margin-top: 22px;
 }
-.badges span,
-.badges button {
+.badges a {
   font: 500 11px/1 var(--mono);
   padding: 8px 12px;
   border-radius: 999px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.8);
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+  text-decoration: none;
   transition: color 0.2s ease, box-shadow 0.2s ease;
 }
-.badges button:hover {
+.badges a:hover {
   color: #fff;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }

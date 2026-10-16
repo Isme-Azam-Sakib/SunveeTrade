@@ -3,6 +3,7 @@
 import { useRef } from "react";
 
 import { Counter } from "@/components/ui/Counter";
+import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
 import { StitchLink } from "@/components/ui/StitchLink";
 import { capacity, factoryStats, productionUnits } from "@/content/site";
@@ -40,7 +41,7 @@ export function Factory() {
       <div className="wrap">
         <div className="stack-head">
           <p className="eyebrow" style={{ marginBottom: 0 }}>
-            Factory at a glance
+            <Icon name="fi-rr-industry-windows" /> Factory at a glance
           </p>
           <h2 className="h2" id="fac-title">
             Built for bulk volume, <em>line by line.</em>

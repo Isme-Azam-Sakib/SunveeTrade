@@ -111,10 +111,16 @@
   justify-content: center;
 }
 .txt small {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font: 500 11px/1 var(--mono);
   letter-spacing: 0.1em;
   color: var(--a600);
   text-transform: uppercase;
+}
+.txt small :global(.fi) {
+  font-size: 0.95rem;
 }
 .txt h3 {
   margin: 10px 0 8px;

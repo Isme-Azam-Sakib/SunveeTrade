@@ -43,15 +43,6 @@ export const aboutIndex = [
   { href: "#leadership", label: "Leadership" },
 ] as const;
 
-export const capabilitiesIndex = [
-  { href: "#manufacturing", label: "Manufacturing systems" },
-  { href: "#machinery", label: "Machinery" },
-  { href: "#sustainability", label: "Sustainability" },
-  { href: "#conduct", label: "Code of conduct" },
-  { href: "#certificates", label: "Certificates" },
-  { href: "#profile", label: "Company profile" },
-] as const;
-
 export const capabilitiesFacts = [
   { label: "Production units", value: "9" },
   { label: "Machine types", value: "17" },
@@ -93,12 +84,36 @@ export const vision: readonly string[] = [
 ];
 
 export const coreValues = [
-  { name: "Integrity", line: "Honest, with strong moral principles." },
-  { name: "Partnership", line: "Work together." },
-  { name: "Trust", line: "Quality and delivery." },
-  { name: "Responsibility", line: "Own it." },
-  { name: "Passion", line: "Excellence: inspire and innovate." },
-  { name: "Team work", line: "Stability." },
+  {
+    name: "Integrity",
+    line: "Honest, with strong moral principles.",
+    icon: "fi-rr-balance-scale-left" as const,
+  },
+  {
+    name: "Partnership",
+    line: "Work together.",
+    icon: "fi-rr-handshake" as const,
+  },
+  {
+    name: "Trust",
+    line: "Quality and delivery.",
+    icon: "fi-rr-shield-check" as const,
+  },
+  {
+    name: "Responsibility",
+    line: "Own it.",
+    icon: "fi-rr-badge-check" as const,
+  },
+  {
+    name: "Passion",
+    line: "Excellence: inspire and innovate.",
+    icon: "fi-rr-flame" as const,
+  },
+  {
+    name: "Team work",
+    line: "Stability.",
+    icon: "fi-rr-users" as const,
+  },
 ] as const;
 
 export const managementFunctions: readonly string[] = [

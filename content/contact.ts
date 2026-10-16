@@ -56,31 +56,42 @@ export const channels = [
     kicker: "General enquiries",
     value: company.email,
     href: `mailto:${company.email}`,
+    icon: "fi-rr-envelope" as const,
   },
   {
     kicker: "Sales and quotations",
     value: company.salesEmail,
     href: `mailto:${company.salesEmail}`,
+    icon: "fi-rr-handshake" as const,
   },
-  { kicker: "Head office line", value: company.phone, href: company.phoneHref },
+  {
+    kicker: "Head office line",
+    value: company.phone,
+    href: company.phoneHref,
+    icon: "fi-rr-phone-call" as const,
+  },
 ] as const;
 
 export const quoteSteps = [
   {
     title: "Send your tech pack",
     text: "Share the product line, quantity and target date, with artwork or a reference sample if you have one.",
+    icon: "fi-rr-document" as const,
   },
   {
     title: "Costed quotation",
     text: "Our merchandising team replies with pricing against your specification.",
+    icon: "fi-rr-file-invoice" as const,
   },
   {
     title: "Sampling plan",
     text: "We agree samples and approvals before any bulk material is committed.",
+    icon: "fi-rr-flask" as const,
   },
   {
     title: "Bulk and delivery",
     text: "Production runs on the planned dates and the consignment ships to your order terms.",
+    icon: "fi-rr-truck-side" as const,
   },
 ] as const;
 

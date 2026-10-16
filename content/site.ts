@@ -99,6 +99,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
   {
     slug: "sti-operating-system",
     kicker: "Operations",
+    icon: "fi-rr-gears",
     title: "STI operating system",
     description:
       "An operations philosophy built on lean manufacturing, removing waste from order to shipment.",
@@ -107,6 +108,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
   {
     slug: "digitalised-shop-floor",
     kicker: "Visibility",
+    icon: "fi-rr-chart-histogram",
     title: "Digitalised shop floor",
     description:
       "ERP gives accurate, instant production status and KPI measurement for every order line.",
@@ -115,6 +117,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
   {
     slug: "five-layer-planning",
     kicker: "Planning",
+    icon: "fi-rr-calendar",
     title: "Five-layer planning",
     description:
       "Business, capacity, operations, demand and service planning lock delivery dates before bulk starts.",
@@ -123,6 +126,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
   {
     slug: "quality-management",
     kicker: "Quality",
+    icon: "fi-rr-badge-check",
     title: "Quality management system",
     description:
       "Quality built in through assurance, with continuous improvement toward zero defects.",
@@ -131,6 +135,7 @@ export const manufacturingSystems: readonly ManufacturingSystem[] = [
   {
     slug: "productive-maintenance",
     kicker: "Maintenance",
+    icon: "fi-rr-wrench-simple",
     title: "Total productive maintenance",
     description:
       "Planned upkeep across 17 machine types keeps breakdowns minor and lines running.",
@@ -149,6 +154,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
   {
     slug: "people",
     name: "People",
+    icon: "fi-rr-users",
     description:
       "Legal minimum wages, freedom of association and equal opportunity. First aid and medical care on site. Child labour is strictly prohibited.",
     tags: ["Legal minimum wage", "Non-discrimination", "Medical care"],
@@ -157,6 +163,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
   {
     slug: "process",
     name: "Process",
+    icon: "fi-rr-settings",
     description:
       "Lean operations, total productive maintenance and a zero-defect quality system cut waste, rework and energy per piece.",
     tags: ["Lean", "TPM", "Zero-defect QMS"],
@@ -165,6 +172,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
   {
     slug: "product",
     name: "Product",
+    icon: "fi-rr-recycle",
     description:
       "Recycled polyester and recycled nylon keep plastic out of landfill and oceans. Organic cotton and Coolmax options, tested to OEKO-TEX Standard 100.",
     tags: ["Recycled polyester", "Recycled nylon", "Organic cotton"],
@@ -173,6 +181,7 @@ export const sustainabilityPillars: readonly SustainabilityPillar[] = [
   {
     slug: "place",
     name: "Place",
+    icon: "fi-rr-map-marker",
     description:
       "Fire safety, pure drinking water for everyone and local labour law upheld across our Gazipur factory.",
     tags: ["Fire safety", "Pure water", "Labour law"],
@@ -188,7 +197,10 @@ export const certificates: readonly Certificate[] = [
     title: "Quality management system",
     description:
       "Covers the manufacture, supply, import and export of garment accessories.",
-    previewSlug: "iso",
+    preview: {
+      key: "certificates/iso.png",
+      alt: "ISO 9001:2015 certificate issued by TNV",
+    },
   },
   {
     mark: "OEKO-TEX",
@@ -197,7 +209,10 @@ export const certificates: readonly Certificate[] = [
     title: "Tested for harmful substances",
     description:
       "Independent proof that our textile trims are safe and responsibly produced.",
-    previewSlug: "oekotex",
+    preview: {
+      key: "certificates/oekotext.png",
+      alt: "OEKO-TEX STANDARD 100 certificate issued by Hohenstein",
+    },
   },
 ];
 

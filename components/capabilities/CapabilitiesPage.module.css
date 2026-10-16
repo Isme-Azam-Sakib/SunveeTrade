@@ -114,43 +114,6 @@
   }
 }
 
-.index {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  padding-top: 12px;
-  padding-bottom: 8px;
-}
-.index > span {
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  flex: none;
-}
-.index ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.index a {
-  display: block;
-  font-size: 13px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: var(--graphite);
-  box-shadow: inset 0 0 0 1px var(--hair-strong);
-  transition-property: background-color, color, box-shadow;
-  transition-duration: 150ms;
-}
-.index a:hover {
-  color: var(--ink);
-  box-shadow: inset 0 0 0 1px var(--ink);
-}
-
 /* ---------------------------------------------------------------------------
    Profile download band
 --------------------------------------------------------------------------- */

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 
+import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
 import { alsoInHouse, manufacturingSystems } from "@/content/site";
 import { map, prefersReducedMotion } from "@/lib/scroll-frame";
@@ -62,7 +63,9 @@ export function Strength() {
     >
       <div className={`wrap ${styles.split}`}>
         <div className={styles.left}>
-          <p className="eyebrow">Why Sunvee</p>
+          <p className="eyebrow">
+            <Icon name="fi-rr-industry-windows" /> Why Sunvee
+          </p>
           <h2 className="h2" id="strength-title">
             Systems that keep bulk orders <em>on time.</em>
           </h2>
@@ -101,7 +104,10 @@ export function Strength() {
                 sizes="(max-width: 720px) 100vw, 200px"
               />
               <div className={styles.txt}>
-                <small>{system.kicker}</small>
+                <small>
+                  {system.icon ? <Icon name={system.icon} /> : null}
+                  {system.kicker}
+                </small>
                 <h3>{system.title}</h3>
                 <p>{system.description}</p>
               </div>

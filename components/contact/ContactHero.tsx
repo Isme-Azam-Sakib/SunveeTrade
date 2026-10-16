@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Arrow } from "@/components/ui/Arrow";
+import { Icon } from "@/components/ui/Icon";
 import { channels } from "@/content/contact";
 
 import styles from "./ContactPage.module.css";
@@ -41,6 +42,7 @@ export function ContactHero() {
               <svg className={styles.stitch} aria-hidden="true">
                 <rect x="0" y="0" width="100%" height="100%" rx="30" />
               </svg>
+              <Icon name={channel.icon} className={styles.channelIcon} />
               <small>{channel.kicker}</small>
               <b>{channel.value}</b>
               <Arrow />

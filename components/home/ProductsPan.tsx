@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 
 import { Arrow } from "@/components/ui/Arrow";
+import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
 import { StitchLink } from "@/components/ui/StitchLink";
 import { productLines } from "@/content/products";
@@ -93,6 +94,9 @@ export function ProductsPan() {
       <div className={styles.stick}>
         <div className={styles.track} ref={trackRef}>
           <div className={styles.intro}>
+            <p className="eyebrow">
+              <Icon name="fi-rr-boxes" /> Product lines
+            </p>
             <h2 className="h2" id="products-title">
               What we make, <em>line by line.</em>
             </h2>

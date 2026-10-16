@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   description:
     "100% export-oriented manufacturer of garment trims, accessories and packaging. Elastics, lingerie trims, embossed ribbon, bra cups, rhinestones and gum tape from nine production units in Gazipur, Bangladesh.",
   applicationName: company.name,
+  icons: {
+    icon: [{ url: "/logo_brandmark.png", type: "image/png" }],
+    apple: [{ url: "/logo_brandmark.png", type: "image/png" }],
+  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
 import { sustainabilityPillars } from "@/content/site";
 
@@ -18,6 +19,9 @@ export function Sustainability() {
     >
       <div className="wrap">
         <div className="stack-head">
+          <p className="eyebrow">
+            <Icon name="fi-rr-leaf" /> Sustainability
+          </p>
           <h2 className="h2" id="sus-title">
             Traceable, transparent, <em>responsible.</em>
           </h2>
@@ -55,11 +59,15 @@ export function Sustainability() {
                 </button>
 
                 <span className={styles.label} aria-hidden="true">
+                  {pillar.icon ? <Icon name={pillar.icon} /> : null}
                   {pillar.name}
                 </span>
 
                 <div className={styles.body} id={panelId}>
-                  <h3>{pillar.name}</h3>
+                  <h3>
+                    {pillar.icon ? <Icon name={pillar.icon} /> : null}
+                    {pillar.name}
+                  </h3>
                   <p>{pillar.description}</p>
                   <ul>
                     {pillar.tags.map((tag) => (

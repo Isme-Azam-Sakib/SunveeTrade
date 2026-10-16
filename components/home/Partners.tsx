@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Icon } from "@/components/ui/Icon";
 import { partnerLogos } from "@/content/partner-logos";
 
 import styles from "./Partners.module.css";
@@ -10,6 +11,9 @@ export function Partners() {
     <section className="sec" id="partners" aria-labelledby="partners-title">
       <div className="wrap">
         <div className="stack-head">
+          <p className="eyebrow">
+            <Icon name="fi-rr-handshake" /> Buying partners
+          </p>
           <h2 className="h2" id="partners-title">
             Global brands <em>we serve.</em>
           </h2>

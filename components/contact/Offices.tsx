@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
 import { StitchLink } from "@/components/ui/StitchLink";
 import { contactOffices } from "@/content/contact";
@@ -17,7 +18,9 @@ export function Offices() {
     >
       <div className="wrap">
         <div className="stack-head">
-          <p className="eyebrow">Offices and factory</p>
+          <p className="eyebrow">
+            <Icon name="fi-rr-building" /> Offices and factory
+          </p>
           <h2 className="h2" id="offices-title">
             Three places, <em>one team.</em>
           </h2>

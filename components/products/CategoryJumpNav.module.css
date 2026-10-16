@@ -1,0 +1,45 @@
+.jumpNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 20px 0 clamp(56px, 7vw, 88px);
+  padding: 0;
+}
+
+.jumpLink {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: var(--sunken);
+  box-shadow: inset 0 0 0 1px var(--hair);
+  color: var(--graphite);
+  font-family: inherit;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 150ms;
+}
+
+.jumpLink:hover,
+.jumpLink:focus-visible {
+  color: var(--a700);
+  background: var(--a50);
+  box-shadow: inset 0 0 0 1px var(--a300);
+}
+
+.jumpCount {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.jumpLink:hover .jumpCount,
+.jumpLink:focus-visible .jumpCount {
+  color: var(--a600);
+}

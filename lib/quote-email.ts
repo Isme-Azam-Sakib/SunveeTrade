@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
 import { getProductLine } from "@/content/products";
+import { company } from "@/content/site";
 import type { QuoteRequest } from "./quote-schema";
 
 function escapeHtml(value: string): string {
@@ -15,11 +16,17 @@ function lineNames(slugs: readonly string[]): string {
   return slugs.map((slug) => getProductLine(slug)?.name ?? slug).join(", ");
 }
 
+/**
+ * Inbox that receives quote submissions. Prefer `SALES_NOTIFICATION_EMAIL`
+ * (comma-separated for several webmail addresses); otherwise the public sales
+ * address on the company record.
+ */
 function recipients(): string[] {
-  return (process.env.SALES_NOTIFICATION_EMAIL ?? "")
+  const configured = (process.env.SALES_NOTIFICATION_EMAIL ?? "")
     .split(",")
     .map((address) => address.trim())
     .filter(Boolean);
+  return configured.length > 0 ? configured : [company.salesEmail];
 }
 
 export interface DeliveryResult {
@@ -29,8 +36,7 @@ export interface DeliveryResult {
 }
 
 /**
- * Primary delivery: a transactional email to the sales contacts, sent the
- * moment a quote request is validated (technical spec §5).
+ * Delivers a validated quote request to the sales webmail inbox via Resend.
  */
 export async function sendQuoteEmail(
   data: QuoteRequest,
@@ -42,7 +48,7 @@ export async function sendQuoteEmail(
     process.env.QUOTE_FROM_EMAIL?.trim() ||
     "Sunvee Website <onboarding@resend.dev>";
 
-  if (!apiKey || to.length === 0) {
+  if (!apiKey) {
     return { ok: false, skipped: true, error: "email-not-configured" };
   }
 

@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import { coreValues } from "@/content/about";
 
 import styles from "./AboutPage.module.css";
@@ -11,7 +12,9 @@ export function Values() {
     >
       <div className="wrap">
         <div className="stack-head">
-          <p className="eyebrow">Core values</p>
+          <p className="eyebrow">
+            <Icon name="fi-rr-star" /> Core values
+          </p>
           <h2 className="h2" id="values-title">
             Six principles we <em>work by.</em>
           </h2>
@@ -28,7 +31,7 @@ export function Values() {
               data-rise
               style={{ "--i": i % 3 } as React.CSSProperties}
             >
-              <span className="fig">{String(i + 1).padStart(2, "0")}</span>
+              <Icon name={value.icon} className={styles.valueIcon} />
               <b>{value.name}</b>
               <p>{value.line}</p>
             </li>

@@ -15,8 +15,8 @@
     "media:upload": "node scripts/upload-media.mjs"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "@marsidev/react-turnstile": "^1.6.1",
-    "google-auth-library": "^11.1.0",
     "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8",

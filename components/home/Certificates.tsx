@@ -1,26 +1,25 @@
-"use client";
+import Image from "next/image";
 
-import { useState } from "react";
-
+import { Icon } from "@/components/ui/Icon";
 import { StitchLink } from "@/components/ui/StitchLink";
 import { certificates } from "@/content/site";
-import type { Certificate } from "@/content/types";
+import { mediaUrl } from "@/lib/images";
 
-import { CertificatePreview } from "./CertificatePreview";
 import styles from "./Certificates.module.css";
 
 export function Certificates() {
-  const [active, setActive] = useState<Certificate | null>(null);
-
   return (
     <section className="sec" id="certificates" aria-labelledby="cert-title">
       <div className="wrap">
         <div className="stack-head">
+          <p className="eyebrow">
+            <Icon name="fi-rr-diploma" /> Certificates
+          </p>
           <h2 className="h2" id="cert-title">
             Audited by <em>named issuers.</em>
           </h2>
           <p className="lede">
-            Preview certificates here. Official copies and test reports are
+            Certificate previews below. Official copies and test reports are
             sent with the first quotation, or on request.
           </p>
         </div>
@@ -36,12 +35,28 @@ export function Certificates() {
               <svg className={styles.stitch} aria-hidden="true">
                 <rect x="0" y="0" width="100%" height="100%" rx="30" />
               </svg>
-              <div className={styles.seal}>
-                <div>
-                  <b>{certificate.mark}</b>
-                  <span>{certificate.standard}</span>
+
+              {certificate.preview ? (
+                <div className={styles.preview}>
+                  <Image
+                    src={mediaUrl(certificate.preview.key)}
+                    alt={certificate.preview.alt}
+                    width={1032}
+                    height={1380}
+                    className={styles.shot}
+                    sizes="(max-width: 720px) 40vw, 200px"
+                    draggable={false}
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className={styles.seal}>
+                  <div>
+                    <b>{certificate.mark}</b>
+                    <span>{certificate.standard}</span>
+                  </div>
+                </div>
+              )}
+
               <div className={styles.body}>
                 <small>Certified by {certificate.issuer}</small>
                 <h3>{certificate.title}</h3>
@@ -50,30 +65,13 @@ export function Certificates() {
                   <span className="fig">
                     {certificate.mark} {certificate.standard}
                   </span>
-                  {certificate.previewSlug ? (
-                    <button
-                      type="button"
-                      className="link"
-                      onClick={() => setActive(certificate)}
-                    >
-                      View certificate
-                    </button>
-                  ) : (
-                    <StitchLink href="/#contact">Request a copy</StitchLink>
-                  )}
+                  <StitchLink href="/#contact">Request a copy</StitchLink>
                 </div>
               </div>
             </article>
           ))}
         </div>
       </div>
-
-      {active ? (
-        <CertificatePreview
-          certificate={active}
-          onClose={() => setActive(null)}
-        />
-      ) : null}
     </section>
   );
 }

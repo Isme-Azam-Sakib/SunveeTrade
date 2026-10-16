@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import { banks, quoteSteps } from "@/content/contact";
 
 import styles from "./ContactPage.module.css";
@@ -10,7 +11,9 @@ export function QuoteProcess() {
     >
       <div className="wrap">
         <div className="stack-head">
-          <p className="eyebrow">How an enquiry works</p>
+          <p className="eyebrow">
+            <Icon name="fi-rr-clipboard-list" /> How an enquiry works
+          </p>
           <h2 className="h2" id="process-title">
             From tech pack to <em>shipment.</em>
           </h2>
@@ -22,17 +25,25 @@ export function QuoteProcess() {
         <ol className={styles.steps} data-in>
           {quoteSteps.map((step, i) => (
             <li key={step.title} style={{ "--i": i } as React.CSSProperties}>
-              <span className={styles.num}>
-                {String(i + 1).padStart(2, "0")}
+              <span className={styles.num} aria-hidden="true">
+                <Icon name={step.icon} />
               </span>
-              <h3>{step.title}</h3>
+              <h3>
+                <span className="sr">
+                  Step {String(i + 1).padStart(2, "0")}.{" "}
+                </span>
+                {step.title}
+              </h3>
               <p>{step.text}</p>
             </li>
           ))}
         </ol>
 
         <div className={styles.banks} data-rise>
-          <h3>Banking partners</h3>
+          <h3>
+            <Icon name="fi-rr-building" className={styles.bankIcon} /> Banking
+            partners
+          </h3>
           <ul>
             {banks.map((bank) => (
               <li key={bank.name}>

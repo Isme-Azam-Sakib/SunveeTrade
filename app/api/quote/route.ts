@@ -8,7 +8,6 @@ import {
   type QuoteFieldErrors,
   type QuoteResponse,
 } from "@/lib/quote-schema";
-import { appendQuoteToSheet } from "@/lib/quote-sheet";
 import { checkRateLimit, clientIp } from "@/lib/rate-limit";
 import { verifyTurnstile } from "@/lib/turnstile";
 
@@ -88,25 +87,16 @@ export async function POST(request: NextRequest) {
 
   const meta = { submittedAt: new Date().toISOString(), ip };
 
-  // 5. Deliver. Email is the primary channel, the sheet is the backup record;
-  //    run both and only fail the request if the lead reached neither.
-  const [email, sheet] = await Promise.all([
-    sendQuoteEmail(data, meta),
-    appendQuoteToSheet(data, meta),
-  ]);
+  // 5. Deliver to the sales webmail address via Resend.
+  const email = await sendQuoteEmail(data, meta);
 
-  if (!email.ok && !sheet.ok) {
-    // Local development before Resend and Sheets credentials exist: print the
-    // lead so the form can be exercised end to end. Never in production —
-    // there, nothing delivered is a genuine failure the visitor must hear
-    // about, so they can fall back to email.
-    if (
-      process.env.NODE_ENV !== "production" &&
-      email.skipped &&
-      sheet.skipped
-    ) {
+  if (!email.ok) {
+    // Local development before Resend credentials exist: print the lead so the
+    // form can be exercised end to end. Never in production — there, nothing
+    // delivered is a genuine failure the visitor must hear about.
+    if (process.env.NODE_ENV !== "production" && email.skipped) {
       console.info(
-        "[quote] no delivery channel configured; lead follows\n",
+        "[quote] RESEND_API_KEY not set; lead follows\n",
         JSON.stringify(
           { ...data, turnstileToken: undefined, ...meta },
           null,
@@ -117,29 +107,17 @@ export async function POST(request: NextRequest) {
         {
           ok: true,
           message:
-            "Logged to the server console. Configure RESEND_API_KEY or the Google Sheets variables to deliver for real.",
+            "Logged to the server console. Set RESEND_API_KEY to deliver to the sales inbox.",
         },
         200,
       );
     }
 
-    console.error("[quote] lead was not delivered anywhere", {
-      email: email.error,
-      sheet: sheet.error,
+    console.error("[quote] email delivery failed", {
+      error: email.error,
       company: data.company,
     });
     return json({ ok: false, message: GENERIC_ERROR }, 502);
-  }
-
-  if (!email.ok) {
-    console.error("[quote] email delivery failed, sheet row written", {
-      error: email.error,
-    });
-  }
-  if (!sheet.ok) {
-    console.error("[quote] sheet append failed, email sent", {
-      error: sheet.error,
-    });
   }
 
   return json(

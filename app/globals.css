@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@flaticon/flaticon-uicons/css/regular/rounded.css";
 
 /* ---------------------------------------------------------------------------
    Design tokens
@@ -170,6 +171,19 @@ button {
   width: 28px;
   height: 0;
   border-top: 1.5px dashed currentColor;
+}
+.eyebrow .fi {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Flaticon Uicons — keep glyphs optically centered in UI chips. */
+.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  speak: never;
 }
 
 .h2 {
@@ -429,37 +443,24 @@ button {
   flex-wrap: wrap;
 }
 
-/* Wordmark, shared by the nav and the footer. */
+/* Brand logo image, shared by the nav and the footer. */
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
+  flex: none;
+  line-height: 0;
 }
-.logo-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--a600);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font: italic 18px/1 var(--serif);
-  padding-top: 2px;
+.logo-img {
+  display: block;
+  width: auto;
+  height: 28px;
 }
-.logo small {
-  font: 500 10px/1 var(--mono);
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  margin-left: 4px;
-  text-transform: uppercase;
+.logo[data-variant="mark"] .logo-img {
+  height: 32px;
 }
 
-@media (max-width: 1280px) {
-  .logo small {
-    display: none;
+@media (max-width: 720px) {
+  .logo[data-variant="full"] .logo-img {
+    height: 22px;
   }
 }

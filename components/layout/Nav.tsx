@@ -51,7 +51,7 @@ export function Nav() {
     <>
       <div className={styles.shell} ref={shellRef} data-hidden="false">
         <nav className={styles.nav} aria-label="Primary">
-          <Logo withSuffix />
+          <Logo variant="full" tone="black" priority />
           <ul className={styles.links}>
             {primaryNav.map((item) => (
               <li key={item.href}>
@@ -81,7 +81,7 @@ export function Nav() {
       {menuOpen ? (
         <div className={styles.drawer} id="mobile-menu">
           <div className={styles.drawerTop}>
-            <Logo />
+            <Logo variant="full" tone="black" />
             <button
               className="btn btn-ghost"
               type="button"

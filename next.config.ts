@@ -50,11 +50,6 @@ const nextConfig: NextConfig = {
   // Any host on the LAN, so testing from a phone survives DHCP handing this
   // machine a new address.
   allowedDevOrigins: ["192.168.1.*"],
-  // Keep certificate PDFs outside `public/` but still ship them with the
-  // preview API route on Vercel (file tracing would otherwise omit them).
-  outputFileTracingIncludes: {
-    "/api/certificates/[slug]": ["./private/certificates/**/*"],
-  },
   images: {
     remotePatterns: remotePatterns(),
     // Catalog photography is content-hashed on upload and effectively
@@ -73,6 +68,15 @@ const nextConfig: NextConfig = {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
           },
+        ],
+      },
+      {
+        // Certificate previews: show inline, never as an attachment download.
+        source: "/media/certificates/:path*",
+        headers: [
+          { key: "Content-Disposition", value: "inline" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
         ],
       },
     ];

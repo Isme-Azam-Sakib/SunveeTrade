@@ -348,6 +348,11 @@
   transition-property: background-color;
   transition-duration: 300ms;
 }
+.valueIcon {
+  font-size: 1.35rem;
+  color: var(--a600);
+  margin-bottom: 10px;
+}
 .valueGrid li::after {
   content: "";
   position: absolute;

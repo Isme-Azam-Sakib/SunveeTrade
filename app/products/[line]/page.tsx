@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageShell } from "@/components/layout/PageShell";
+import { CategoryJumpNav } from "@/components/products/CategoryJumpNav";
 import { CoverParallax } from "@/components/products/CoverParallax";
 import { LineGallery } from "@/components/products/LineGallery";
 import { Media } from "@/components/ui/Media";
@@ -80,14 +81,6 @@ export default async function ProductLinePage(
             </div>
           ) : null}
         </dl>
-
-        {line.materials?.length ? (
-          <div className={styles.materials}>
-            {line.materials.map((material) => (
-              <span key={material}>{material}</span>
-            ))}
-          </div>
-        ) : null}
       </section>
 
       <div className="wrap">
@@ -101,6 +94,11 @@ export default async function ProductLinePage(
             priority
           />
         </CoverParallax>
+
+        <CategoryJumpNav
+          categories={line.categories}
+          lineName={line.name}
+        />
       </div>
 
       <section

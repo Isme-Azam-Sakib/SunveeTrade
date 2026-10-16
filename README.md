@@ -99,13 +99,10 @@ are handled without a separate transformation service.
    field, so a bot never gets a 400 naming it.
 4. **Turnstile** verification. Skipped when no secret is set, except in
    production, where the handler refuses rather than accepting unverified input.
-5. **Deliver** to Resend (primary) and Google Sheets (backup record) in
-   parallel. The request only fails if the lead reached neither.
-
-The Sheets log uses `google-auth-library` plus the Sheets REST endpoint rather
-than the full `googleapis` package, which is far larger than one append call
-warrants. Expected column order is `SHEET_HEADERS` in
-[`lib/quote-sheet.ts`](lib/quote-sheet.ts).
+5. **Deliver** by email via Resend to `SALES_NOTIFICATION_EMAIL` (defaults to
+   `sales@sunveeintl.com`). Reply-To is the visitor’s address so the team can
+   answer from webmail. Without `RESEND_API_KEY`, local submits log to the
+   server console; production returns an error so visitors can email directly.
 
 ### Scroll choreography
 
@@ -142,9 +139,8 @@ required for local development.
 | `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, robots |
 | `NEXT_PUBLIC_IMAGE_CDN_DOMAIN` | Serving images from R2 instead of `/media` |
 | `R2_*` | `npm run media:upload` (dev-side only) |
-| `RESEND_API_KEY`, `QUOTE_FROM_EMAIL`, `SALES_NOTIFICATION_EMAIL` | Quote emails |
-| `GOOGLE_SHEETS_*` | Backup lead log |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Spam protection |
+| `RESEND_API_KEY`, `QUOTE_FROM_EMAIL`, `SALES_NOTIFICATION_EMAIL` | Quote emails to webmail |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Spam protection (required in production) |
 
 > The spec lists the Turnstile site key as `TURNSTILE_SITE_KEY`. A site key is
 > public by definition and has to reach the browser, so it carries the
@@ -162,8 +158,8 @@ Before launch:
 
 - [ ] Create the R2 bucket and its public custom domain; set `NEXT_PUBLIC_IMAGE_CDN_DOMAIN`
 - [ ] `npm run media:upload` with real photography
-- [ ] Verify the Resend sending domain
-- [ ] Share the leads spreadsheet with the Google service account address
+- [ ] Create a Resend API key; set `RESEND_API_KEY` and verify the sending domain
+- [ ] Confirm `SALES_NOTIFICATION_EMAIL` is the live webmail inbox
 - [ ] Add the production hostname to the Turnstile widget
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the live origin
 

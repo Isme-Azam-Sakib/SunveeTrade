@@ -11,6 +11,9 @@
 .sus :global(.lede) {
   color: rgba(255, 255, 255, 0.75);
 }
+.sus :global(.eyebrow) {
+  color: #ffd9c6;
+}
 
 .acc {
   display: flex;
@@ -83,11 +86,17 @@
   position: absolute;
   left: 24px;
   bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 26px;
   font-weight: 400;
   letter-spacing: -0.02em;
   transition-property: opacity;
   transition-duration: 200ms;
+}
+.label :global(.fi) {
+  font-size: 1.1rem;
 }
 .pane[data-open="true"] .label {
   opacity: 0;
@@ -113,11 +122,19 @@
 }
 .body h3 {
   margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 1;
+}
+.body h3 :global(.fi) {
+  font-family: uicons-regular-rounded, sans-serif;
+  font-style: normal;
+  font-size: 0.55em;
 }
 .body p {
   margin: 0;

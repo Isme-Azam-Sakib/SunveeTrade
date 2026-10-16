@@ -73,13 +73,15 @@ export interface Certificate {
   readonly issuer: string;
   readonly title: string;
   readonly description: string;
-  /** View-only preview slug served by `/api/certificates/[slug]`. */
-  readonly previewSlug?: "iso" | "oekotex";
+  /** View-only preview image (no download link). */
+  readonly preview?: MediaRef;
 }
 
 export interface ManufacturingSystem {
   readonly slug: string;
   readonly kicker: string;
+  /** Flaticon Uicons class, e.g. `fi-rr-gears`. */
+  readonly icon?: `fi-rr-${string}`;
   readonly title: string;
   readonly description: string;
   readonly image: MediaRef;
@@ -88,6 +90,8 @@ export interface ManufacturingSystem {
 export interface SustainabilityPillar {
   readonly slug: string;
   readonly name: string;
+  /** Flaticon Uicons class, e.g. `fi-rr-users`. */
+  readonly icon?: `fi-rr-${string}`;
   readonly description: string;
   readonly tags: readonly string[];
   readonly image: MediaRef;
