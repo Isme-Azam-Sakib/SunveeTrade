@@ -13,8 +13,8 @@ export const company = {
   description:
     "Garments Accessories Manufacturer, Exporter, Importer, & Supplier",
   established: 2024,
-  phone: "+88 09640 234 234",
-  phoneHref: "tel:+8809640234234",
+  phone: "+880 17 1304 8045",
+  phoneHref: "tel:+8801713048045",
   email: "sales@sunveeintl.com",
   salesEmail: "sales@sunveeintl.com",
 } as const;

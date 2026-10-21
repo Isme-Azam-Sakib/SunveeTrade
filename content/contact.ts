@@ -26,8 +26,7 @@ export const contactOffices: readonly ContactOffice[] = [
     image: { key: px(6774432), alt: "Team working in a bright office" },
     people: [{ name: "Sohag Patwary", role: "Contact person" }],
     phones: [
-      { label: "+880 1713 048045", href: "tel:+8801713048045" },
-      { label: "+880 1913 257876", href: "tel:+8801913257876" },
+      { label: "+880 17 1304 8045", href: "tel:+8801713048045" },
     ],
     email: company.salesEmail,
   },

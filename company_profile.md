@@ -205,11 +205,11 @@ H&M, BOSS (Hugo Boss), C&A, PUMA, GUESS, ZARA, next, LPP, BESTSELLER, NEWYORKER,
  
 *   **Bangladesh Corporate Office:** House 3, Lane 5, Block A, Section 6, Mirpur, Dhaka 1216, Bangladesh.
     *   **Contact Persons:** Sohag Patwary
-    *   **Cell:** +880 1713 048045, +8801913 257 876
+    *   **Cell:** +880 17 1304 8045
     *   **Email:** sohag@sunveeintl.com
 *   **China Office:** No.6 Building, # 123 Road, Shilou town, Panyu area, Guangzhou city China. Post Code: 511447.
     *   **Email:** yyzyhui@163.com
 *   **Factory:** 340/1, Uttar Khailkoir, National University, Gacca Gazipur - 1704 Bangladesh.
 *   **General Email:** info@sunveeintl.com
-*   **Phone:** +88 09640 234 234
+*   **Phone:** +880 17 1304 8045
 *   **Web Address:** www.sunveeintl.com
