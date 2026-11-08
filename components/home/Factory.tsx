@@ -13,7 +13,7 @@ import { useScrollFrame } from "@/lib/use-scroll-frame";
 import styles from "./Factory.module.css";
 
 const FACTORY_IMAGE = {
-  key: "manufacturing/machine-line.jpg",
+  key: "home/factory-needle-loom.webp",
   alt: "Needle loom machine on the factory floor",
 };
 

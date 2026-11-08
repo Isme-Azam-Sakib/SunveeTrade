@@ -75,7 +75,7 @@ export function Footer() {
       <div className={styles.cta}>
         <div className={styles.bg} ref={bgRef}>
           <Image
-            src={mediaUrl("home/footer.jpg")}
+            src={mediaUrl("home/footer-rhinestone-texture.webp")}
             alt=""
             aria-hidden="true"
             fill

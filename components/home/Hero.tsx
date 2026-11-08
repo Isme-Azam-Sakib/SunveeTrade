@@ -13,12 +13,12 @@ import { clamp, prefersReducedMotion } from "@/lib/scroll-frame";
 import styles from "./Hero.module.css";
 
 const HERO_IMAGE = {
-  key: "home/rhinestone-backdrop.jpg",
-  alt: "Faceted hot-fix rhinestones in iridescent colours",
+  key: "home/hero-jacquard-loom.webp",
+  alt: "Jacquard needle looms threaded with orange yarn",
 };
 const DETAIL_IMAGE = {
-  key: "home/details.jpg",
-  alt: "Iridescent metal studs on dark ground",
+  key: "home/hero-rhinestone-setting.webp",
+  alt: "Hand setting hot-fix rhinestones into a motif template",
 };
 
 export function Hero() {
@@ -132,9 +132,7 @@ export function Hero() {
           >
             <span className={styles.inlineImg} aria-hidden="true">
               <Image
-                src={mediaUrl(
-                  "product-lines/rhinestones-studs/title-image.jpg",
-                )}
+                src={mediaUrl("home/headline-braiding-bobbins.webp")}
                 alt=""
                 fill
                 sizes="140px"

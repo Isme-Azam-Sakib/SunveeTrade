@@ -12,7 +12,7 @@ import { useBuild, useScrollFrame } from "@/lib/use-scroll-frame";
 import styles from "./About.module.css";
 
 const ABOUT_IMAGE = {
-  key: "home/factory-floor-wides.jpg",
+  key: "home/about-needle-loom-floor.webp",
   alt: "Narrow fabric weaving machines running on the factory floor",
 };
 

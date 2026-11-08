@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CoverParallax } from "@/components/products/CoverParallax";
 import { Arrow } from "@/components/ui/Arrow";
 import { Media } from "@/components/ui/Media";
-import { aboutImages, capabilitiesFacts } from "@/content/about";
+import { capabilitiesFacts } from "@/content/about";
 import { companyProfile } from "@/content/site";
 
 import styles from "./CapabilitiesPage.module.css";
@@ -51,8 +51,8 @@ export function CapabilitiesHero() {
         <Media
           as="figure"
           media={{
-            key: "manufacturing/machine-line.jpg",
-            alt: "Needle loom line on the Sunvee factory floor",
+            key: "capabilities/hero-jacquard-row.webp",
+            alt: "Row of jacquard needle looms on the Sunvee factory floor",
           }}
           priority
           sizes="(max-width: 900px) 100vw, 48vw"
@@ -62,7 +62,7 @@ export function CapabilitiesHero() {
         <Media
           as="figure"
           media={{
-            key: aboutImages.machineB.key,
+            key: "capabilities/float-jacquard-detail.webp",
             alt: "",
           }}
           sizes="(max-width: 900px) 40vw, 18vw"

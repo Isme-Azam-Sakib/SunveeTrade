@@ -1,31 +1,48 @@
 import type { MediaRef } from "./types";
 
 /**
- * Pexels placeholders for the About page. Swap each `key` for a bucket-relative
- * path (e.g. `about/story-sewing.jpg`) once real photography exists; `mediaUrl`
- * resolves both forms.
+ * Pexels URL helper, kept for the one remaining placeholder (the China office
+ * on the contact page). `mediaUrl` resolves both URLs and bucket keys.
  */
 export const px = (id: number, w = 1600) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const aboutImages = {
-  cover: { key: px(4210860, 2000), alt: "Stack of folded denim garments" },
-  story: { key: px(3738088), alt: "Seamstress working at a sewing machine" },
-  storyAlt: { key: px(1078958), alt: "Patterned garments on a rail" },
-  mission: { key: px(5673488), alt: "Two people shaking hands over a table" },
-  management: { key: px(3184291), alt: "Team meeting around a table" },
-  machineA: { key: px(1108101), alt: "Technician servicing machinery" },
+  cover: {
+    key: "about/cover-lace-floor.webp",
+    alt: "Operators trimming lace at long cutting tables on the Sunvee floor",
+  },
+  story: {
+    key: "about/story-loom-operator.webp",
+    alt: "Operator threading a needle loom",
+  },
+  storyAlt: {
+    key: "about/story-ironing-tape.webp",
+    alt: "Operator pressing finished tape at an ironing table",
+  },
+  mission: {
+    key: "about/mission-handshake.webp",
+    alt: "Sunvee managers shaking hands with a visitor on the factory floor",
+  },
+  management: {
+    key: "about/management-desk.webp",
+    alt: "Manager reviewing order documents at his desk",
+  },
+  machineA: {
+    key: "about/machine-jacquard.webp",
+    alt: "Operator setting up a jacquard needle loom",
+  },
   machineB: {
-    key: px(2760241),
-    alt: "Engineer inspecting industrial equipment",
+    key: "about/machine-hotfix.webp",
+    alt: "Hot-fix motif machines",
   },
   machineC: {
-    key: px(3862632),
-    alt: "Engineer working on production equipment",
+    key: "about/machine-laser-cutter.webp",
+    alt: "Laser cutting machine in the laser cutting area",
   },
   logistics: {
-    key: px(4481259),
-    alt: "Warehouse aisle with pallets and racking",
+    key: "about/conduct-lace-team.webp",
+    alt: "Two operators checking lace together at a work table",
   },
 } satisfies Record<string, MediaRef>;
 

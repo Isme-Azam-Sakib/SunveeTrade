@@ -23,7 +23,10 @@ export const contactOffices: readonly ContactOffice[] = [
     label: "Corporate office",
     role: "Bangladesh, Dhaka",
     address: address("Corporate office"),
-    image: { key: px(6774432), alt: "Team working in a bright office" },
+    image: {
+      key: "contact/corporate-office.webp",
+      alt: "Sunvee staff member working at an office desk",
+    },
     people: [{ name: "Sohag Patwary", role: "Contact person" }],
     phones: [
       { label: "+880 17 1304 8045", href: "tel:+8801713048045" },
@@ -36,8 +39,8 @@ export const contactOffices: readonly ContactOffice[] = [
     role: "Bangladesh, Gazipur",
     address: address("Factory"),
     image: {
-      key: px(2760243),
-      alt: "Engineer beside large industrial machinery",
+      key: "contact/factory-floor.webp",
+      alt: "Needle loom line on the Gazipur factory floor",
     },
   },
   {
