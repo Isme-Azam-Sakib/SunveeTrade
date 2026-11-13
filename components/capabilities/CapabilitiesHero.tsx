@@ -52,7 +52,7 @@ export function CapabilitiesHero() {
           as="figure"
           media={{
             key: "capabilities/hero-jacquard-row.webp",
-            alt: "Row of jacquard needle looms on the Sunvee factory floor",
+            alt: "Jacquard needle loom weaving tape into a collection basket",
           }}
           priority
           sizes="(max-width: 900px) 100vw, 48vw"

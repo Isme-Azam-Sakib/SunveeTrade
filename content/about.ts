@@ -26,7 +26,7 @@ export const aboutImages = {
   },
   management: {
     key: "about/management-desk.webp",
-    alt: "Manager reviewing order documents at his desk",
+    alt: "Manager working at his desk",
   },
   machineA: {
     key: "about/machine-jacquard.webp",

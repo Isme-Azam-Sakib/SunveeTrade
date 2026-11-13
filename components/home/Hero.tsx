@@ -14,7 +14,7 @@ import styles from "./Hero.module.css";
 
 const HERO_IMAGE = {
   key: "home/hero-jacquard-loom.webp",
-  alt: "Jacquard needle looms threaded with orange yarn",
+  alt: "Operator working at a jacquard needle loom threaded with orange yarn",
 };
 const DETAIL_IMAGE = {
   key: "home/hero-rhinestone-setting.webp",
