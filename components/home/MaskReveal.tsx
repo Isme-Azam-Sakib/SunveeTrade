@@ -13,7 +13,7 @@ const CUT_TEXT = "Made to spec";
  * Muted, looping, chromeless — a moving backdrop, not a video to watch.
  * `loop=1` only works on a single video when `playlist` repeats its own id.
  */
-const BG_VIDEO_ID = "q-boolpi1DI";
+const BG_VIDEO_ID = "LXY9Z6ssxkE";
 const BG_VIDEO_SRC =
   `https://www.youtube-nocookie.com/embed/${BG_VIDEO_ID}` +
   `?autoplay=1&mute=1&loop=1&playlist=${BG_VIDEO_ID}` +
