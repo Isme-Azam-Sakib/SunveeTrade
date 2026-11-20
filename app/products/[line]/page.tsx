@@ -87,7 +87,7 @@ export default async function ProductLinePage(
         <CoverParallax className={styles.cover}>
           <Media
             as="figure"
-            media={line.cover}
+            media={line.banner ?? line.cover}
             className={styles.coverFrame}
             imgClassName={styles.coverImg}
             sizes="(max-width: 1220px) 100vw, 1180px"

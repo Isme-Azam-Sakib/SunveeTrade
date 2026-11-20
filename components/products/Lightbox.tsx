@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -184,9 +183,6 @@ export function Lightbox({ items, index, onIndexChange, onClose }: Props) {
               {String(index + 1).padStart(2, "0")} /{" "}
               {String(total).padStart(2, "0")}
             </span>
-            <Link href="/#contact" className="link" onClick={onClose}>
-              Request this sample
-            </Link>
           </div>
         </div>
 

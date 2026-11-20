@@ -50,6 +50,11 @@ export interface ProductLine {
   readonly intro: string;
   readonly cover: MediaRef;
   /**
+   * Wide banner for the top of the product-line page. Falls back to `cover`.
+   * Kept separate because `cover` also fills the portrait cards elsewhere.
+   */
+  readonly banner?: MediaRef;
+  /**
    * Headline capacity figure for this line, as shown on the homepage card.
    * Formatted for display (Indian grouping) rather than computed.
    */

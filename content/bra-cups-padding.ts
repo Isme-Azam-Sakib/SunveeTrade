@@ -11,6 +11,10 @@ export const braCupsPadding: ProductLine = {
     key: "product-lines/bra-cups-padding/bra-cups.jpg",
     alt: "Round moulded foam cups, black and white",
   },
+  banner: {
+    key: "product-lines/bra-cups-padding/collage.jpg",
+    alt: "Collage of bra cups and shoulder pads: swimwear, stacked, push-up, lace spacer, black spacer, coral super push-up, shoulder pads and blush padded cups",
+  },
   headlineFigure: "7,80,640 pairs per month, shoulder pads",
   materials: ["High-density foam", "Laminated tricot", "Spacer fabric"],
   categories: [
@@ -138,6 +142,13 @@ export const braCupsPadding: ProductLine = {
             { key: "product-lines/bra-cups-padding/padded/padded-cup-6/1.png", alt: "Padded cup 6" },
           ],
         },
+        {
+          slug: "padded-cup-7",
+          name: "Padded cup 7",
+          images: [
+            { key: "product-lines/bra-cups-padding/padded/padded-cup-7/1.png", alt: "Padded cup 7, mauve" },
+          ],
+        },
       ],
     },
     {
@@ -173,6 +184,13 @@ export const braCupsPadding: ProductLine = {
             { key: "product-lines/bra-cups-padding/push-up/push-up-cup-4/1.png", alt: "Push-up cup 4" },
           ],
         },
+        {
+          slug: "push-up-cup-5",
+          name: "Push-up cup 5",
+          images: [
+            { key: "product-lines/bra-cups-padding/push-up/push-up-cup-5/1.png", alt: "Push-up cup 5, blush pink" },
+          ],
+        },
       ],
     },
     {
@@ -199,6 +217,13 @@ export const braCupsPadding: ProductLine = {
           name: "Super push-up cup 3",
           images: [
             { key: "product-lines/bra-cups-padding/super-push-up/super-push-up-cup-3/1.png", alt: "Super push-up cup 3" },
+          ],
+        },
+        {
+          slug: "super-push-up-cup-4",
+          name: "Super push-up cup 4",
+          images: [
+            { key: "product-lines/bra-cups-padding/super-push-up/super-push-up-cup-4/1.png", alt: "Super push-up cup 4, coral" },
           ],
         },
       ],
